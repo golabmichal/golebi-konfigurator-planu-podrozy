@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gołębie Latają - plan podróży gotowy w 48h</title>
+<meta name="description" content="Nie kolejne biuro podróży. Wyślij gołębia, a my przygotujemy plan Twojej podróży w 48h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== KONFIGURACJA: zmień w jednym miejscu ===== */
+  /* e-mail i social podmień niżej w sekcji KONTAKT oraz w <script> (KONTAKT_EMAIL) */
+
+  :root{
+    --paper:#ece3d0;
+    --paper-2:#f7f1e3;
+    --ink:#1b2a45;
+    --ink-soft:#5a6275;
+    --air-red:#bf4329;
+    --air-blue:#2c5a86;
+    --postmark:#9a8a66;
+    --line:#cebfa1;
+    --shadow:rgba(27,42,69,.16);
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;line-height:1.05;margin:0;}
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:"Space Mono",monospace;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--air-red);margin:0 0 14px;
+  }
+
+  /* ===== PAR AVION band ===== */
+  .par-avion{
+    height:14px;
+    background:repeating-linear-gradient(45deg,
+      var(--air-red) 0 16px,
+      var(--paper-2) 16px 30px,
+      var(--air-blue) 30px 46px,
+      var(--paper-2) 46px 60px);
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:40;
+    background:rgba(236,227,208,.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Playfair Display";font-weight:600;font-size:19px;letter-spacing:.01em;color:var(--ink);}
+  .brand-logo{height:38px;width:auto;display:block;}
+  .brand-fb{display:none;align-items:center;gap:10px;}
+  .brand-fb svg{width:30px;height:30px;}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:500;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--air-red);}
+  .nav-cta{
+    font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper-2);text-decoration:none;
+    padding:9px 16px;border-radius:2px;transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--air-red);}
+  @media(max-width:760px){.nav-links{display:none;}}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;padding:78px 0 64px;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero .tagline{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.12em;color:var(--air-red);text-transform:lowercase;margin-bottom:22px;}
+  .hero h1{font-size:clamp(54px,9vw,104px);letter-spacing:-.02em;font-weight:800;}
+  .hero h1 em{font-style:italic;color:var(--air-red);}
+  .hero .lede{font-size:19px;color:var(--ink-soft);max-width:46ch;margin-top:24px;}
+  .hero-cta{
+    display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    background:var(--air-red);color:var(--paper-2);text-decoration:none;font-weight:600;
+    padding:15px 26px;border-radius:3px;box-shadow:0 8px 26px var(--shadow);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .hero-cta:hover{transform:translateY(-2px);box-shadow:0 12px 34px var(--shadow);}
+  .hero-cta svg{width:18px;height:18px;}
+
+  /* postmark envelope graphic */
+  .postcard{
+    position:relative;background:var(--paper-2);
+    border:1px solid var(--line);border-radius:4px;
+    padding:26px 24px 22px;transform:rotate(-2deg);
+    box-shadow:0 18px 40px var(--shadow);
+  }
+  .postcard .pa-edge{position:absolute;inset:0;border:5px solid transparent;border-radius:4px;
+    background:repeating-linear-gradient(45deg,var(--air-red) 0 9px,transparent 9px 18px,var(--air-blue) 18px 27px,transparent 27px 36px) border-box;
+    -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+  .pm{position:absolute;top:18px;right:18px;width:84px;height:84px;border:2px solid var(--postmark);border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--postmark);
+    font-family:"Space Mono",monospace;font-size:9px;letter-spacing:.08em;text-align:center;transform:rotate(8deg);opacity:.8;}
+  .pm b{font-size:15px;letter-spacing:.04em;}
+  .postcard h3{font-size:15px;font-family:"Space Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--air-blue);margin-bottom:14px;}
+  .postcard .lines span{display:block;height:1px;background:var(--line);margin:18px 0;}
+  .postcard .to{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:.05em;}
+  .postcard .big48{font-family:"Playfair Display";font-size:46px;color:var(--ink);margin-top:10px;line-height:1;}
+  .postcard .big48 small{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;color:var(--air-red);display:block;text-transform:uppercase;margin-bottom:4px;}
+  .photo{position:relative;width:100%;aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:var(--paper);
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .photo-ph{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-soft);text-align:center;line-height:1.7;}
+  .photo-ph small{font-size:10px;opacity:.6;text-transform:none;letter-spacing:0;}
+  .postcard-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;}.postcard{max-width:380px;}}
+
+  /* ===== SECTION shells ===== */
+  section{padding:74px 0;}
+  .sec-head{margin-bottom:42px;}
+  .sec-head h2{font-size:clamp(30px,4.4vw,46px);letter-spacing:-.01em;}
+
+  /* ===== NADAWCY / pigeons ===== */
+  .pigeons{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .pigeon{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:30px;position:relative;}
+  .pigeon .tag{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--air-red);}
+  .pigeon h3{font-size:30px;margin:6px 0 16px;}
+  .pigeon p{font-size:15.5px;color:var(--ink-soft);margin-bottom:0;}
+  .portrait{position:relative;width:150px;height:150px;border-radius:50%;overflow:hidden;margin-bottom:20px;
+    background:var(--paper);border:2px dashed var(--postmark);display:flex;align-items:center;justify-content:center;}
+  .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .portrait-ph{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-soft);text-align:center;line-height:1.7;padding:8px;}
+  .portrait-ph small{font-size:9px;opacity:.6;text-transform:none;letter-spacing:0;}
+  @media(max-width:760px){.pigeons{grid-template-columns:1fr;}}
+
+  /* ===== PROCES ===== */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .step{position:relative;padding-top:14px;}
+  .step .no{font-family:"Space Mono",monospace;font-size:13px;color:var(--air-red);letter-spacing:.1em;}
+  .step h3{font-size:21px;margin:8px 0 8px;}
+  .step p{font-size:15px;color:var(--ink-soft);margin:0;}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;gap:30px;}}
+
+  /* ===== ZNACZKI / packages ===== */
+  .stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;}
+  .stamp{position:relative;background:var(--paper-2);padding:26px 22px 24px;border-radius:2px;cursor:pointer;
+    transition:transform .22s, box-shadow .22s;box-shadow:0 6px 18px var(--shadow);}
+  .stamp::before{content:"";position:absolute;inset:-7px;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(circle 5px,var(--paper) 47%,#0000 50%) top left/16px 13px repeat-x,
+      radial-gradient(circle 5px,var(--paper) 47%,#0000 50%) bottom left/16px 13px repeat-x,
+      radial-gradient(circle 5px,var(--paper) 47%,#0000 50%) top left/13px 16px repeat-y,
+      radial-gradient(circle 5px,var(--paper) 47%,#0000 50%) top right/13px 16px repeat-y;}
+  .stamp::after{content:"";position:absolute;inset:7px;border:1.5px solid var(--line);border-radius:1px;pointer-events:none;}
+  .stamp:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 16px 34px var(--shadow);}
+  .stamp.selected{box-shadow:0 0 0 3px var(--air-red),0 16px 34px var(--shadow);}
+  .stamp.selected::after{border-color:var(--air-red);}
+  .stamp .denom{font-family:"Playfair Display";font-size:40px;line-height:1;}
+  .stamp .denom small{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink-soft);letter-spacing:.06em;}
+  .stamp .pkgname{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--air-red);margin:14px 0 6px;}
+  .stamp h3{font-size:21px;margin-bottom:10px;}
+  .stamp p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+  .stamp ul{list-style:none;padding:0;margin:0;font-size:14.5px;color:var(--ink-soft);}
+  .stamp li{padding:5px 0 5px 20px;position:relative;}
+  .stamp li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border:1px solid var(--air-blue);transform:rotate(45deg);}
+  .stamp .pick{margin-top:16px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);}
+  .stamp.selected .pick{color:var(--air-red);}
+  @media(max-width:860px){.stamps{grid-template-columns:1fr;max-width:380px;margin:0 auto;}}
+
+  /* ===== FORMULARZ / zlecenie lotu ===== */
+  #zlecenie{background:var(--ink);color:var(--paper-2);}
+  #zlecenie .eyebrow{color:#e9b8a6;}
+  #zlecenie .sec-head h2{color:var(--paper-2);}
+  #zlecenie .sec-head p{color:#aeb6c6;}
+  .form-card{background:var(--paper-2);color:var(--ink);border-radius:6px;padding:38px;box-shadow:0 24px 60px rgba(0,0,0,.3);position:relative;overflow:hidden;}
+  .form-card .pa-strip{position:absolute;top:0;left:0;right:0;height:8px;
+    background:repeating-linear-gradient(45deg,var(--air-red) 0 12px,var(--paper-2) 12px 22px,var(--air-blue) 22px 34px,var(--paper-2) 34px 44px);}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:14px;}
+  .field{display:flex;flex-direction:column;gap:7px;}
+  .field.full{grid-column:1 / -1;}
+  label{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);}
+  input[type=text],input[type=email],input[type=number],textarea,select{
+    font-family:"Figtree",sans-serif;font-size:16px;color:var(--ink);
+    background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:12px 14px;width:100%;
+    transition:border-color .2s, box-shadow .2s;}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--air-red);box-shadow:0 0 0 3px rgba(191,67,41,.15);}
+  textarea{resize:vertical;min-height:96px;}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{font-size:14px;border:1px solid var(--line);background:var(--paper);border-radius:30px;padding:8px 15px;cursor:pointer;user-select:none;transition:all .18s;}
+  .chip:hover{border-color:var(--air-blue);}
+  .chip.on{background:var(--ink);color:var(--paper-2);border-color:var(--ink);}
+  .slider-row{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);font-family:"Space Mono",monospace;}
+  input[type=range]{width:100%;accent-color:var(--air-red);height:28px;}
+  .pkg-mini{display:flex;gap:10px;flex-wrap:wrap;}
+  .pkg-mini button{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    border:1px solid var(--line);background:var(--paper);border-radius:3px;padding:10px 14px;cursor:pointer;transition:all .18s;color:var(--ink);}
+  .pkg-mini button.on{background:var(--air-red);color:var(--paper-2);border-color:var(--air-red);}
+  .submit{margin-top:28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .btn-send{display:inline-flex;align-items:center;gap:11px;background:var(--air-red);color:var(--paper-2);border:none;
+    font-family:"Figtree";font-weight:600;font-size:17px;padding:16px 30px;border-radius:4px;cursor:pointer;
+    transition:transform .2s, background .2s;}
+  .btn-send:hover{transform:translateY(-2px);background:#a8381f;}
+  .btn-send svg{width:20px;height:20px;}
+  .send-note{font-size:13px;color:var(--ink-soft);}
+  .confirm{display:none;margin-top:24px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--air-blue);border-radius:4px;padding:20px 22px;}
+  .confirm h4{font-family:"Playfair Display";font-size:20px;margin:0 0 8px;}
+  .confirm pre{font-family:"Space Mono",monospace;font-size:12.5px;white-space:pre-wrap;color:var(--ink-soft);margin:12px 0 0;line-height:1.65;}
+  .confirm .copy{margin-top:14px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper-2);border:none;border-radius:3px;padding:9px 16px;cursor:pointer;}
+  @media(max-width:680px){.form-grid{grid-template-columns:1fr;}.form-card{padding:26px 20px;}}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--paper);border-top:1px solid var(--line);padding:54px 0 40px;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
+  .foot-brand{display:flex;align-items:center;gap:12px;font-family:"Playfair Display";font-size:24px;}
+  .foot-brand svg{width:40px;height:40px;}
+  .socials{display:flex;gap:14px;}
+  .socials a{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:30px;padding:8px 16px;transition:all .18s;}
+  .socials a:hover{color:var(--air-red);border-color:var(--air-red);}
+  .copyr{margin-top:30px;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.06em;color:var(--ink-soft);}
+  .foot-contact{margin-top:12px;font-size:15px;}
+  .foot-contact a{color:var(--air-red);text-decoration:none;}
+  .foot-contact a:hover{text-decoration:underline;}
+  .foot-legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);display:flex;gap:22px;flex-wrap:wrap;}
+  .foot-legal a{font-size:13px;color:var(--ink-soft);text-decoration:none;}
+  .foot-legal a:hover{color:var(--air-red);}
+
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;}}
+
+  .video{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:var(--ink);border:1px solid var(--line);box-shadow:0 16px 40px var(--shadow);}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:var(--paper-2);text-align:center;padding:20px;}
+  .video-ph svg{width:60px;height:60px;opacity:.85;}
+  .video-ph span{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;line-height:1.9;}
+  .video-ph small{opacity:.55;font-size:11px;text-transform:none;letter-spacing:0;}
+</style>
+</head>
+<body>
+
+<div class="par-avion"></div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" style="text-decoration:none;">
+      <img src="img/logo.png" alt="Gołębie Latają" class="brand-logo" onerror="this.style.display='none';document.getElementById('brandFb').style.display='flex'">
+      <span class="brand-fb" id="brandFb">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 30c6 2 11 1 16-4 3-3 6-8 12-9 3-.5 5 1 5 3 0 3-3 4-6 4-2 5-6 10-13 12-7 2-13-1-14-6z"/>
+          <circle cx="38" cy="18" r="1.4" fill="currentColor" stroke="none"/>
+          <path d="M22 26l-8 12M27 27l-4 13"/>
+        </svg>
+        Gołębie Latają
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#nadawcy">Nadawcy</a>
+      <a href="#proces">Jak to działa</a>
+      <a href="#znaczki">Pakiety</a>
+    </div>
+    <a class="nav-cta" href="#zlecenie">Wyślij gołębia</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tagline">nie kolejne biuro podróży</div>
+      <h1>GOŁĘBIE <em>LATAJĄ</em></h1>
+      <p class="lede">Dla tych, którzy nie mają czasu na planowanie wymarzonych wakacji, ale bardzo chcą na nich być. Twój plan podróży gotowy w 48h.</p>
+      <a class="hero-cta" href="#zlecenie">
+        Zaplanujemy Ci wakacje
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="postcard">
+      <div class="pa-edge"></div>
+      <div class="pm"><span>POLSKA</span><b>48H</b><span>POCZTA</span></div>
+      <div class="photo">
+        <img src="img/razem.jpg" alt="Michał i Paulina" onerror="this.style.display='none'">
+        <span class="photo-ph">Wasze wspólne<br>zdjęcie tutaj<br><small>img/razem.jpg</small></span>
+      </div>
+      <div class="postcard-foot">
+        <div class="to">do: marzycieli i odkrywców</div>
+        <div class="big48"><small>plan gotowy w</small>48h</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="nadawcy">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nadawcy</p>
+      <h2>Dwa gołębie, jeden cel: Twój idealny wyjazd</h2>
+    </div>
+    <div class="pigeons">
+      <article class="pigeon">
+        <div class="portrait">
+          <img src="img/michal.jpg" alt="Michał" onerror="this.style.display='none'">
+          <span class="portrait-ph">Zdjęcie<br><small>img/michal.jpg</small></span>
+        </div>
+        <div class="tag">Gołąb nr 1</div>
+        <h3>Michał</h3>
+        <p>City break, plaże, dżungla czy koniec świata? Byłem. W podróżach szukam ciszy, lokalnych smaków i historii której nie ma w przewodnikach. Malediwy i Seszele nauczyły mnie że najlepsze wakacje to te, po których wracasz spokojniejszy niż wyjechałeś. Wiem jak zaplanować wakacje aby odnaleźć ten wewnętrzny spokój.</p>
+      </article>
+      <article class="pigeon">
+        <div class="portrait">
+          <img src="img/paulina.jpg" alt="Paulina" onerror="this.style.display='none'">
+          <span class="portrait-ph">Zdjęcie<br><small>img/paulina.jpg</small></span>
+        </div>
+        <div class="tag">Gołąb nr 2</div>
+        <h3>Paulina</h3>
+        <p>Zakynthos o zachodzie słońca, Gambia pełna kolorów i zwierząt których nie zapomnę do końca życia. Kocham plaże, lokalne kuchnie i tę idealną proporcję: 50% leżenie, 50% odkrywanie. Planując Twój wyjazd zadbam o każdy podany przez Ciebie detal, tak by wspomnienia z wyjazdu pozostały z Tobą na zawsze.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="film">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Z naszych podróży</p>
+      <h2>Zobacz, dokąd już dolecieliśmy</h2>
+    </div>
+    <div class="video">
+      <div class="video-ph">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <span>Tu wstawimy film z Waszych podróży<br><small>kompilacja z YouTube</small></span>
+      </div>
+      <!-- GDY MASZ FILM: skasuj powyższy <div class="video-ph">...</div> i odkomentuj poniższą linię,
+           wstawiając ID filmu z YouTube zamiast TWOJE_ID (np. dQw4w9WgXcQ z linku youtube.com/watch?v=dQw4w9WgXcQ)
+      <iframe src="https://www.youtube.com/embed/TWOJE_ID" title="Z naszych podróży" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      -->
+    </div>
+  </div>
+</section>
+
+<section id="proces" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Jak to działa</p>
+      <h2>Trzy ruchy skrzydeł i plan ląduje u Ciebie</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="no">01</div>
+        <h3>Wypełniasz zlecenie</h3>
+        <p>Mówisz nam dokąd, z kim, na jak długo i co kochasz w podróżach. Kilka pól, dwie minuty.</p>
+      </div>
+      <div class="step">
+        <div class="no">02</div>
+        <h3>Gołąb chwyta za pióro</h3>
+        <p>Dobieramy kierunki, miejsca i smaki pod Ciebie. Bez kopiuj-wklej z internetu.</p>
+      </div>
+      <div class="step">
+        <div class="no">03</div>
+        <h3>Masz gotowy plan w 48h</h3>
+        <p>Dostajesz konkretny plan podróży. Pakujesz walizkę, my zajęliśmy się resztą.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="znaczki">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Pakiety</p>
+      <h2>Wybierz swój bilet na plan podróży</h2>
+    </div>
+    <div class="stamps">
+      <div class="stamp" data-pkg="Podstawowy Lot (399 zł)">
+        <div class="denom">399 zł</div>
+        <div class="pkgname">Podstawowy Lot</div>
+        <h3>Konkretny plan na szybko</h3>
+        <ul>
+          <li>Propozycje lotów i zorganizowanych wycieczek pod Twoje parametry</li>
+          <li>Informacje o wybranym kraju i mieście</li>
+          <li>Lista atrakcji i wycieczek do odbycia na miejscu</li>
+        </ul>
+        <div class="pick">Wybierz ten bilet</div>
+      </div>
+      <div class="stamp" data-pkg="Kompletny Lot (899 zł)">
+        <div class="denom">899 zł</div>
+        <div class="pkgname">Kompletny Lot</div>
+        <h3>Plan dzień po dniu</h3>
+        <ul>
+          <li>Dane o lotach, hotelach i zorganizowanych wycieczkach</li>
+          <li>Plan dzień po dniu pod Twoje preferencje</li>
+          <li>Rekomendacje restauracji</li>
+          <li>Co warto wiedzieć o miejscu + słowniczek do kraju</li>
+        </ul>
+        <div class="pick">Wybierz ten bilet</div>
+      </div>
+      <div class="stamp" data-pkg="Lot Premium (1499 zł)">
+        <div class="denom">1499 zł</div>
+        <div class="pkgname">Lot Premium</div>
+        <h3>Plan kompleksowy ze wsparciem</h3>
+        <ul>
+          <li>Nasze propozycje wyjazdu do wyboru</li>
+          <li>Kompleksowy plan: atrakcje, restauracje, kluby i miejsca pod Ciebie</li>
+          <li>Wsparcie na czacie w trakcie całego wyjazdu</li>
+        </ul>
+        <div class="pick">Wybierz ten bilet</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zlecenie">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Zlecenie wykonania planu</p>
+      <h2>Wyślij gołębia</h2>
+      <p>Wypełnij poniższe pola. Im więcej szczegółów, tym celniej trafimy w Twój wyjazd.</p>
+    </div>
+    <div class="form-card">
+      <div class="pa-strip"></div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="imie">Imię</label>
+          <input type="text" id="imie" placeholder="Jak masz na imię?">
+        </div>
+        <div class="field">
+          <label for="kontakt">E-mail lub telefon</label>
+          <input type="text" id="kontakt" placeholder="Gdzie odesłać plan?">
+        </div>
+
+        <div class="field full">
+          <label>Charakter wyjazdu</label>
+          <div class="chips" data-group="charakter">
+            <span class="chip">City break</span>
+            <span class="chip">Plaże</span>
+            <span class="chip">Dżungla</span>
+            <span class="chip">Koniec świata</span>
+            <span class="chip">Góry</span>
+            <span class="chip">Road trip</span>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>Standard wyjazdu</label>
+          <div class="chips single" data-group="standard">
+            <span class="chip">Budżetowo</span>
+            <span class="chip">Klasycznie</span>
+            <span class="chip">Komfortowo</span>
+            <span class="chip">Luksusowo</span>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>Kto jedzie</label>
+          <div class="chips single" data-group="kto">
+            <span class="chip">Solo</span>
+            <span class="chip">Para hetero</span>
+            <span class="chip">Para LGBTQ+</span>
+            <span class="chip">Rodzina</span>
+            <span class="chip">Rodzina z dziećmi</span>
+            <span class="chip">Grupa znajomych</span>
+          </div>
+        </div>
+
+        <div class="field full" id="wiekField" style="display:none;">
+          <label for="wiekdzieci">Wiek dzieci</label>
+          <input type="text" id="wiekdzieci" placeholder="np. 4 i 7 lat">
+        </div>
+
+        <div class="field">
+          <label for="termin">Termin (dokładne daty lub miesiąc)</label>
+          <input type="text" id="termin" placeholder="np. 12-22 września 2026 albo wrzesień">
+        </div>
+        <div class="field">
+          <label for="dlugosc">Długość wyjazdu (dni)</label>
+          <input type="number" id="dlugosc" min="1" placeholder="np. 10">
+        </div>
+
+        <div class="field">
+          <label for="osoby">Liczba osób</label>
+          <input type="number" id="osoby" min="1" value="2">
+        </div>
+
+        <div class="field">
+          <label for="budzet">Budżet na osobę (wszystko wliczone)</label>
+          <select id="budzet">
+            <option>do 1 500 zł</option>
+            <option>1 500 - 3 000 zł</option>
+            <option selected>3 000 - 6 000 zł</option>
+            <option>6 000 - 12 000 zł</option>
+            <option>powyżej 12 000 zł</option>
+            <option>jeszcze nie wiem</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="styl">Styl: leżenie vs odkrywanie</label>
+          <input type="range" id="styl" min="0" max="100" value="50">
+          <div class="slider-row"><span>100% leżenie</span><span id="stylVal">50 / 50</span><span>100% odkrywanie</span></div>
+        </div>
+
+        <div class="field full">
+          <label>Co jest dla Ciebie ważne w podróży</label>
+          <div class="chips" data-group="wartosci">
+            <span class="chip">Cisza</span>
+            <span class="chip">Lokalna kuchnia</span>
+            <span class="chip">Historia</span>
+            <span class="chip">Natura i zwierzęta</span>
+            <span class="chip">Plaża</span>
+            <span class="chip">Życie nocne</span>
+            <span class="chip">Relaks i SPA</span>
+            <span class="chip">Aktywnie i sport</span>
+            <span class="chip">Sztuka i architektura</span>
+            <span class="chip">Zakupy</span>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>Wybrany pakiet</label>
+          <div class="pkg-mini" id="pkgMini">
+            <button type="button" data-pkg="Podstawowy Lot (399 zł)">Podstawowy Lot · 399 zł</button>
+            <button type="button" data-pkg="Kompletny Lot (899 zł)">Kompletny Lot · 899 zł</button>
+            <button type="button" data-pkg="Lot Premium (1499 zł)">Lot Premium · 1499 zł</button>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label for="dodatkowe">Cokolwiek jeszcze powinniśmy wiedzieć</label>
+          <textarea id="dodatkowe" placeholder="np. nie latamy WizzAirem, ograniczenia, dieta, marzenia, wymarzone miejsce..."></textarea>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button type="button" class="btn-send" id="sendBtn">
+          Wyślij gołębia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <span class="send-note">Otworzy się Twój program pocztowy z gotową wiadomością.</span>
+      </div>
+
+      <div class="confirm" id="confirm">
+        <h4>Gotowe do wysłania</h4>
+        <p style="margin:0;color:var(--ink-soft);font-size:14px;">Jeśli okno poczty się nie otworzyło, skopiuj poniższe i wyślij ręcznie.</p>
+        <pre id="confirmText"></pre>
+        <button class="copy" id="copyBtn">Skopiuj treść</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30c6 2 11 1 16-4 3-3 6-8 12-9 3-.5 5 1 5 3 0 3-3 4-6 4-2 5-6 10-13 12-7 2-13-1-14-6z"/><circle cx="38" cy="18" r="1.4" fill="currentColor" stroke="none"/><path d="M22 26l-8 12M27 27l-4 13"/></svg>
+          Gołębie Latają
+        </div>
+        <!-- KONTAKT: podmień na swój e-mail -->
+        <div class="foot-contact"><a href="mailto:kontakt@golebielataja.pl">kontakt@golebielataja.pl</a></div>
+      </div>
+      <!-- KONTAKT: podmień # na realne linki -->
+      <div class="socials">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" target="_blank" rel="noopener">YouTube</a>
+        <a href="#" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="regulamin.html">Regulamin</a>
+    </div>
+    <div class="copyr">© <span id="yr"></span> Gołębie Latają · plan podróży gotowy w 48h</div>
+  </div>
+</footer>
+
+<script>
+  // ===== KONTAKT: podmień na swój e-mail =====
+  const KONTAKT_EMAIL = "kontakt@golebielataja.pl";
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // chips: multi-select domyślnie, single-select dla .chips.single
+  const wiekField=document.getElementById('wiekField');
+  function updWiek(){
+    const sel=document.querySelector('.chips[data-group="kto"] .chip.on');
+    const v=sel?sel.textContent:'';
+    wiekField.style.display=(v==='Rodzina'||v==='Rodzina z dziećmi')?'flex':'none';
+  }
+  document.querySelectorAll('.chips .chip').forEach(c=>{
+    c.addEventListener('click',()=>{
+      const group=c.closest('.chips');
+      if(group.classList.contains('single')){
+        const wasOn=c.classList.contains('on');
+        group.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+        if(!wasOn) c.classList.add('on');
+      }else{
+        c.classList.toggle('on');
+      }
+      if(group.dataset.group==='kto') updWiek();
+    });
+  });
+
+  // slider label
+  const styl = document.getElementById('styl');
+  const stylVal = document.getElementById('stylVal');
+  function updStyl(){const o=+styl.value;stylVal.textContent=(100-o)+" / "+o;}
+  styl.addEventListener('input',updStyl);updStyl();
+
+  // package selection (stamps + mini buttons stay in sync)
+  let selectedPkg = "";
+  const stamps = document.querySelectorAll('.stamp');
+  const miniBtns = document.querySelectorAll('#pkgMini button');
+  function selectPkg(pkg){
+    selectedPkg = pkg;
+    stamps.forEach(s=>s.classList.toggle('selected', s.dataset.pkg===pkg));
+    miniBtns.forEach(b=>b.classList.toggle('on', b.dataset.pkg===pkg));
+  }
+  stamps.forEach(s=>s.addEventListener('click',()=>selectPkg(s.dataset.pkg)));
+  miniBtns.forEach(b=>b.addEventListener('click',()=>selectPkg(b.dataset.pkg)));
+
+  function chipVals(group){
+    return [...document.querySelectorAll('.chips[data-group="'+group+'"] .chip.on')].map(c=>c.textContent).join(', ') || '-';
+  }
+
+  function buildBrief(){
+    const imie=document.getElementById('imie').value.trim()||'-';
+    const kontakt=document.getElementById('kontakt').value.trim()||'-';
+    const o=+styl.value;
+    const ktoSel=document.querySelector('.chips[data-group="kto"] .chip.on');
+    const ktoTxt=ktoSel?ktoSel.textContent:'';
+    const lines=[
+      "ZLECENIE WYKONANIA PLANU - Gołębie Latają",
+      "------------------------------------------",
+      "Imię: "+imie,
+      "Kontakt: "+kontakt,
+      "Charakter wyjazdu: "+chipVals('charakter'),
+      "Standard: "+chipVals('standard'),
+      "Kto jedzie: "+chipVals('kto')
+    ];
+    if(ktoTxt==='Rodzina'||ktoTxt==='Rodzina z dziećmi'){
+      lines.push("Wiek dzieci: "+(document.getElementById('wiekdzieci').value.trim()||'-'));
+    }
+    lines.push(
+      "Termin: "+(document.getElementById('termin').value.trim()||'-'),
+      "Długość (dni): "+(document.getElementById('dlugosc').value||'-'),
+      "Liczba osób: "+(document.getElementById('osoby').value||'-'),
+      "Budżet/os. (wszystko wliczone): "+document.getElementById('budzet').value,
+      "Styl (leżenie/odkrywanie): "+(100-o)+" / "+o,
+      "Co ważne: "+chipVals('wartosci'),
+      "Pakiet: "+(selectedPkg||'-'),
+      "Dodatkowo: "+(document.getElementById('dodatkowe').value.trim()||'-')
+    );
+    return lines.join("\n");
+  }
+
+  document.getElementById('sendBtn').addEventListener('click',()=>{
+    const imie=document.getElementById('imie').value.trim();
+    const kontakt=document.getElementById('kontakt').value.trim();
+    if(!imie||!kontakt){
+      alert("Podaj imię oraz e-mail lub telefon, żebyśmy mogli odesłać plan.");
+      return;
+    }
+    const brief=buildBrief();
+    const subj="Zlecenie wykonania planu - "+imie;
+    window.location.href="mailto:"+KONTAKT_EMAIL+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(brief);
+    const conf=document.getElementById('confirm');
+    document.getElementById('confirmText').textContent=brief;
+    conf.style.display='block';
+    conf.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  document.getElementById('copyBtn').addEventListener('click',()=>{
+    navigator.clipboard.writeText(document.getElementById('confirmText').textContent)
+      .then(()=>{const b=document.getElementById('copyBtn');b.textContent='Skopiowano';setTimeout(()=>b.textContent='Skopiuj treść',1600);});
+  });
+</script>
+</body>
+</html>
