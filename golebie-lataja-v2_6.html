@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Gołębie Latają. Plan podróży gotowy w 48h</title>
+<meta name="description" content="Nie kolejne biuro podróży. Wyślij gołębia, a my przygotujemy plan Twojej podróży w 48h.">
+<meta property="og:title" content="Gołębie Latają. Plan podróży gotowy w 48h">
+<meta property="og:description" content="Ty mówisz, czego chcesz. My układamy wyjazd dopięty na ostatni guzik. Plan w 48h.">
+<meta property="og:image" content="https://golebielataja.pl/img/razem.jpg">
+<meta property="og:url" content="https://golebielataja.pl">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+/* ============================================================
+   GOŁĘBIE LATAJĄ · v2 „Poczta lotnicza"
+   Tokeny marki
+   ============================================================ */
+:root{
+  --paper:      #F6F0E2;   /* papier listowy */
+  --paper-deep: #EFE6D0;   /* cień papieru */
+  --ink:        #23262C;   /* atrament */
+  --red:        #C8371F;   /* czerwień lotnicza */
+  --navy:       #1E3A6D;   /* granat lotniczy */
+  --gold:       #B98A2E;   /* znaczek premium */
+  --white:      #FDFBF5;
+
+  --f-display: "Fraunces", Georgia, serif;
+  --f-body:    "IBM Plex Sans", system-ui, sans-serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, monospace;
+
+  --maxw: 1080px;
+  --radius: 3px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{
+  scroll-behavior:smooth;
+  color-scheme:light only;
+  background:var(--paper);
+}
+body{
+  font-family:var(--f-body);
+  font-size:17px; line-height:1.6;
+  color:var(--ink);
+  background-color:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(30,58,109,0) 0 27px, rgba(30,58,109,.035) 27px 28px);
+}
+/* Sekcje mają jawne tło, żadna przeglądarka ani webview nie ma czego przyciemniać */
+section{ background-color:var(--paper); }
+section.sample{ background-color:var(--paper-deep); }
+section.packages{ background-color:var(--paper-deep); }
+img{ max-width:100%; display:block; }
+a{ color:var(--navy); }
+::selection{ background:var(--navy); color:var(--paper); }
+:focus-visible{ outline:3px solid var(--red); outline-offset:2px; }
+
+/* Pasek poczty lotniczej, sygnatura na górze i dole strony */
+.airmail-strip{
+  height:14px;
+  background:repeating-linear-gradient(-45deg,
+    var(--red) 0 12px, var(--paper) 12px 24px,
+    var(--navy) 24px 36px, var(--paper) 36px 48px);
+}
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+
+/* Etykiety pocztowe (eyebrow) */
+.eyebrow{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--red);
+  display:flex; align-items:center; gap:12px; margin-bottom:14px;
+}
+.eyebrow::before{ content:"✈"; font-size:14px; }
+.eyebrow::after{ content:""; flex:1; border-top:1px dashed rgba(35,38,44,.35); }
+
+h2{
+  font-family:var(--f-display); font-weight:650;
+  font-size:clamp(28px, 4.2vw, 42px); line-height:1.12;
+  letter-spacing:-.01em; margin-bottom:18px;
+}
+section{ padding:72px 0; }
+
+/* ============================================================
+   NAGŁÓWEK
+   ============================================================ */
+header.site{
+  position:sticky; top:0; z-index:50;
+  background:rgba(246,240,226,.92); backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(35,38,44,.15);
+}
+header.site .wrap{
+  display:flex; align-items:center; gap:22px; height:62px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--f-display); font-weight:650; font-size:19px;
+  color:var(--ink); text-decoration:none;
+}
+.brand img{ width:34px; height:34px; object-fit:contain; }
+nav.main{ margin-left:auto; display:flex; gap:22px; }
+nav.main a{
+  font-family:var(--f-body); font-size:14.5px; font-weight:600;
+  text-decoration:none; color:var(--ink); white-space:nowrap;
+}
+@media (max-width:1060px){ nav.main a.nh1{ display:none; } }
+@media (max-width:940px){ nav.main a.nh2{ display:none; } }
+@media (max-width:860px){ nav.main a.nh3{ display:none; } }
+nav.main a:hover{ color:var(--red); }
+.btn{
+  display:inline-block; cursor:pointer;
+  font-family:var(--f-mono); font-size:14px; font-weight:500; letter-spacing:.05em;
+  background:var(--red); color:var(--white);
+  border:2px solid var(--ink); border-radius:var(--radius);
+  padding:11px 22px; text-decoration:none;
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{ transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink); }
+.btn:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 var(--ink); }
+.btn.navy{ background:var(--navy); }
+.btn.ghost{ background:transparent; color:var(--ink); box-shadow:none; }
+header.site .btn{ padding:8px 16px; font-size:13px; white-space:nowrap; }
+.brand svg{ width:30px; height:30px; flex-shrink:0; }
+@media (max-width:760px){ nav.main{ display:none; } header.site .btn{ margin-left:auto; } }
+
+/* ============================================================
+   HERO: koperta lotnicza
+   ============================================================ */
+.hero{ padding:56px 0 80px; }
+.envelope{
+  position:relative;
+  background:var(--white);
+  border:12px solid transparent;
+  border-image:repeating-linear-gradient(-45deg,
+    var(--red) 0 12px, var(--white) 12px 24px,
+    var(--navy) 24px 36px, var(--white) 36px 48px) 12;
+  box-shadow:0 18px 40px -18px rgba(35,38,44,.45), 0 2px 0 rgba(35,38,44,.15);
+  padding:clamp(26px, 5vw, 56px);
+  display:grid; grid-template-columns:1.35fr .9fr; gap:40px;
+}
+@media (max-width:860px){ .envelope{ grid-template-columns:1fr; } }
+
+.address .to{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--navy); margin-bottom:14px;
+}
+.address h1{
+  font-family:var(--f-display); font-weight:650;
+  font-size:clamp(44px, 7.5vw, 84px); line-height:.98; letter-spacing:-.02em;
+}
+.address h1 em{ font-style:italic; color:var(--red); }
+.address .lede{
+  margin:22px 0 30px; max-width:52ch; font-size:18px;
+}
+.hero-meta{
+  margin-top:26px; display:flex; gap:18px; flex-wrap:wrap;
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.12em;
+  text-transform:uppercase; color:rgba(35,38,44,.78);
+}
+.hero-meta span{ display:flex; align-items:center; gap:8px; }
+.hero-meta b{ color:var(--red); font-weight:500; }
+
+/* Prawy róg koperty: znaczki + stempel */
+.franking{ position:relative; display:flex; flex-direction:column; align-items:flex-end; gap:18px; }
+.stamp-mini{
+  width:118px; padding:8px;
+  background:var(--white);
+  border:1px solid rgba(35,38,44,.25);
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 14px) calc(100% - 14px) no-repeat,
+    radial-gradient(circle 4px at 7px 7px, #0000 97%, #000 100%) 0 0 / 14px 14px round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 14px) calc(100% - 14px) no-repeat,
+    radial-gradient(circle 4px at 7px 7px, #0000 97%, #000 100%) 0 0 / 14px 14px round;
+}
+.stamp-mini .inner{
+  border:2px solid var(--navy); padding:10px 8px 8px; text-align:center;
+}
+.stamp-mini img{ width:52px; margin:0 auto 6px; }
+.stamp-mini .val{
+  font-family:var(--f-mono); font-size:11px; letter-spacing:.1em;
+  color:var(--navy); text-transform:uppercase;
+}
+.stamp-mini.red .inner{ border-color:var(--red); }
+.stamp-mini.red .big{
+  font-family:var(--f-display); font-size:34px; font-weight:650; color:var(--red); line-height:1;
+}
+.postmark{
+  position:absolute; top:34px; right:78px; width:120px; height:120px;
+  border:2.5px solid rgba(35,38,44,.75); border-radius:50%;
+  display:grid; place-items:center; text-align:center;
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(35,38,44,.75);
+  transform:rotate(-14deg); mix-blend-mode:multiply; pointer-events:none;
+}
+.postmark::after{
+  content:""; position:absolute; inset:9px;
+  border:1px solid rgba(35,38,44,.55); border-radius:50%;
+}
+.hero-photo{
+  margin-top:auto; background:var(--white);
+  border:1px solid rgba(35,38,44,.25); padding:10px 10px 14px;
+  box-shadow:0 8px 20px -10px rgba(35,38,44,.4);
+  transform:rotate(2deg); max-width:280px;
+}
+.hero-photo img{ aspect-ratio:4/3; object-fit:cover; }
+.hero-photo figcaption{
+  font-family:var(--f-mono); font-size:11px; letter-spacing:.08em;
+  text-align:center; margin-top:8px; color:rgba(35,38,44,.78);
+}
+@media (max-width:860px){
+  .franking{ flex-direction:row; align-items:flex-start; }
+  .postmark{ top:-10px; right:auto; left:96px; }
+  .hero-photo{ margin-top:0; }
+}
+
+/* ============================================================
+   NADAWCY: dwa znaczki portretowe
+   ============================================================ */
+.senders{ display:grid; grid-template-columns:1fr 1fr; gap:34px; margin-top:34px; }
+@media (max-width:760px){ .senders{ grid-template-columns:1fr; } }
+.sender{
+  background:var(--white); padding:14px;
+  border:1px solid rgba(35,38,44,.2);
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 16px) calc(100% - 16px) no-repeat,
+    radial-gradient(circle 5px at 8px 8px, #0000 97%, #000 100%) 0 0 / 16px 16px round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 16px) calc(100% - 16px) no-repeat,
+    radial-gradient(circle 5px at 8px 8px, #0000 97%, #000 100%) 0 0 / 16px 16px round;
+}
+.sender .inner{ border:2px solid var(--navy); padding:22px; height:100%; }
+.sender .tag{
+  font-family:var(--f-mono); font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--red); margin-bottom:12px;
+}
+.sender img{
+  width:120px; height:120px; object-fit:cover; border-radius:50%;
+  border:3px solid var(--paper-deep); float:right; margin:0 0 12px 16px;
+}
+.sender h3{ font-family:var(--f-display); font-size:26px; font-weight:650; margin-bottom:8px; }
+.sender p{ font-size:15.5px; }
+
+/* ============================================================
+   PRZYKŁADOWY PLAN: teczka podróżna (jasna wersja)
+   ============================================================ */
+.sample{
+  background:var(--paper-deep);
+  border-top:3px solid var(--navy);
+  border-bottom:3px solid var(--navy);
+}
+.sample-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
+@media (max-width:860px){ .sample-grid{ grid-template-columns:1fr; } }
+.sample ul{ list-style:none; margin:20px 0 28px; }
+.sample li{
+  padding:9px 0 9px 30px; position:relative;
+  border-bottom:1px dashed rgba(35,38,44,.3); font-size:16px;
+}
+.sample li::before{ content:"✓"; position:absolute; left:2px; color:var(--red); font-weight:600; }
+.dossier{ position:relative; height:340px; }
+.page{
+  position:absolute; width:230px; height:310px; background:var(--white); color:var(--ink);
+  border:1px solid rgba(35,38,44,.25); padding:18px;
+  box-shadow:0 14px 30px -12px rgba(0,0,0,.5);
+}
+.page.p1{ left:6%; top:16px; transform:rotate(-5deg); }
+.page.p2{ left:32%; top:0;  transform:rotate(2deg); z-index:2; }
+.page.p3{ left:58%; top:22px; transform:rotate(7deg); }
+.page .ph{
+  font-family:var(--f-mono); font-size:9px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--red); margin-bottom:10px;
+}
+.page .pt{ font-family:var(--f-display); font-size:17px; font-weight:650; line-height:1.2; margin-bottom:12px; }
+.page .ln{ height:6px; background:var(--paper-deep); margin-bottom:7px; border-radius:2px; }
+.page .ln.s{ width:70%; } .page .ln.m{ width:88%; }
+.page .map{
+  height:92px; margin-top:12px; border:1px dashed rgba(35,38,44,.35);
+  background:
+    radial-gradient(circle 4px at 30% 40%, var(--red) 0 4px, transparent 5px),
+    radial-gradient(circle 4px at 62% 62%, var(--red) 0 4px, transparent 5px),
+    radial-gradient(circle 4px at 78% 30%, var(--red) 0 4px, transparent 5px),
+    linear-gradient(120deg, transparent 46%, rgba(30,58,109,.18) 47%, transparent 53%);
+}
+@media (max-width:560px){
+  .dossier{ height:300px; }
+  .page{ width:180px; height:260px; }
+  .page.p3{ display:none; }
+}
+
+/* ============================================================
+   JAK TO DZIAŁA: trasa lotu
+   ============================================================ */
+.steps{ list-style:none; counter-reset:krok; display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:44px; position:relative; }
+.steps::before{
+  content:""; position:absolute; top:31px; left:11%; right:11%;
+  border-top:2px dashed rgba(35,38,44,.35);
+}
+.steps li{ counter-increment:krok; position:relative; padding-top:86px; }
+.steps li::before{
+  content:counter(krok, decimal-leading-zero);
+  position:absolute; top:0; left:0;
+  width:62px; height:62px; border-radius:50%;
+  background:var(--paper); border:2.5px solid var(--ink);
+  display:grid; place-items:center;
+  font-family:var(--f-mono); font-size:16px; font-weight:500;
+  box-shadow:0 0 0 6px var(--paper);
+}
+.steps li:nth-child(2)::before{ border-color:var(--red); color:var(--red); }
+.steps li:nth-child(3)::before{ border-color:var(--navy); color:var(--navy); }
+.steps h3{ font-family:var(--f-display); font-size:21px; font-weight:650; margin-bottom:8px; }
+.steps p{ font-size:15.5px; }
+@media (max-width:760px){
+  .steps{ grid-template-columns:1fr; gap:26px; }
+  .steps::before{ top:0; bottom:0; left:31px; right:auto; border-top:0; border-left:2px dashed rgba(35,38,44,.35); }
+  .steps li{ padding:0 0 0 86px; min-height:70px; }
+}
+
+/* ============================================================
+   PAKIETY: arkusz znaczków
+   ============================================================ */
+.packages{ background:var(--paper-deep); }
+.pack-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:40px; align-items:stretch; }
+@media (max-width:960px){ .pack-grid{ grid-template-columns:1fr; max-width:520px; margin-inline:auto; } }
+.pack{
+  position:relative; background:var(--white); padding:14px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 16px) calc(100% - 16px) no-repeat,
+    radial-gradient(circle 5px at 8px 8px, #0000 97%, #000 100%) 0 0 / 16px 16px round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 16px) calc(100% - 16px) no-repeat,
+    radial-gradient(circle 5px at 8px 8px, #0000 97%, #000 100%) 0 0 / 16px 16px round;
+  display:flex;
+}
+.pack .inner{
+  border:2px solid var(--navy); padding:26px 22px; width:100%;
+  display:flex; flex-direction:column;
+}
+.pack .denom{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--navy); margin-bottom:14px;
+}
+.pack .price{ font-family:var(--f-display); font-size:34px; font-weight:650; color:var(--ink); }
+.pack .price small{ font-size:16px; font-weight:500; }
+.pack h3{ font-family:var(--f-display); font-size:23px; font-weight:650; margin-bottom:4px; }
+.pack .sub{ font-size:14.5px; color:rgba(35,38,44,.78); margin-bottom:16px; }
+.pack ul{ list-style:none; margin-bottom:24px; flex:1; }
+.pack li{
+  font-size:14.5px; padding:7px 0 7px 24px; position:relative;
+  border-bottom:1px dashed rgba(35,38,44,.2);
+}
+.pack li::before{ content:"✈"; position:absolute; left:0; color:var(--red); font-size:13px; top:9px; }
+.pack li b{ font-weight:600; }
+.pack .btn{ width:100%; text-align:center; }
+.pack.featured .inner{ border-color:var(--red); border-width:3px; }
+.pack .flag{
+  position:absolute; top:26px; right:-8px; z-index:2;
+  background:var(--red); color:var(--white);
+  font-family:var(--f-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 12px;
+}
+.pack.premium .inner{ border-color:var(--gold); }
+.pack.premium .denom{ color:var(--gold); }
+
+/* ============================================================
+   FAQ: poczta zwrotna
+   ============================================================ */
+.faq details{
+  background:var(--white); border:1px solid rgba(35,38,44,.2);
+  border-left:5px solid var(--navy); margin-bottom:12px;
+}
+.faq details[open]{ border-left-color:var(--red); }
+.faq summary{
+  cursor:pointer; padding:16px 20px; list-style:none;
+  font-family:var(--f-display); font-size:18px; font-weight:650;
+  display:flex; justify-content:space-between; align-items:center; gap:14px;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:"+"; font-family:var(--f-mono); font-size:20px; color:var(--red); flex-shrink:0;
+}
+.faq details[open] summary::after{ content:"–"; }
+.faq details p{ padding:0 20px 18px; font-size:15.5px; }
+
+/* ============================================================
+   FORMULARZ: list przewozowy
+   ============================================================ */
+.order{ padding-bottom:96px; }
+.waybill{
+  background:var(--white);
+  border:12px solid transparent;
+  border-image:repeating-linear-gradient(-45deg,
+    var(--red) 0 12px, var(--white) 12px 24px,
+    var(--navy) 24px 36px, var(--white) 36px 48px) 12;
+  box-shadow:0 18px 40px -18px rgba(35,38,44,.45);
+  padding:clamp(24px, 4.5vw, 52px);
+  margin-top:36px; position:relative;
+}
+.waybill-head{
+  display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
+  border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:8px;
+}
+.waybill-head .t1{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--red);
+}
+.waybill-head h3{ font-family:var(--f-display); font-size:clamp(24px,3.4vw,34px); font-weight:650; }
+.waybill-head .no{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.1em; color:rgba(35,38,44,.78);
+  text-align:right; white-space:nowrap;
+}
+fieldset{
+  border:0; border-bottom:1px dashed rgba(35,38,44,.3);
+  padding:26px 0;
+}
+fieldset:last-of-type{ border-bottom:0; }
+legend{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--navy);
+  padding-top:26px; float:left; width:100%; margin-bottom:16px;
+}
+legend b{ color:var(--red); font-weight:500; }
+.row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; clear:both; }
+.row.three{ grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:700px){ .row, .row.three{ grid-template-columns:1fr; } }
+.field label{
+  display:block; font-size:13.5px; font-weight:600; margin-bottom:6px;
+}
+.field label small{ font-weight:400; color:rgba(35,38,44,.78); }
+input[type=text], input[type=email], input[type=tel], input[type=number], select, textarea{
+  width:100%; font-family:var(--f-body); font-size:16px; color:var(--ink);
+  background:transparent; border:0; border-bottom:2px solid rgba(35,38,44,.4);
+  padding:9px 2px; border-radius:0;
+}
+textarea{ border:1.5px solid rgba(35,38,44,.4); padding:12px; min-height:88px; resize:vertical; }
+input:focus, select:focus, textarea:focus{ border-color:var(--red); outline:none; }
+input::placeholder, textarea::placeholder{ color:rgba(35,38,44,.55); }
+
+/* Chipy: jak stemple na paczce */
+.chips{ display:flex; flex-wrap:wrap; gap:10px; clear:both; }
+.chips label{ cursor:pointer; }
+.chips input{ position:absolute; opacity:0; pointer-events:none; }
+.chips span{
+  display:inline-block; padding:8px 16px;
+  font-family:var(--f-mono); font-size:13.5px;
+  border:1.5px solid rgba(35,38,44,.5); border-radius:2px;
+  background:var(--white); transition:all .12s ease; user-select:none;
+}
+.chips input:checked + span{
+  background:var(--navy); color:var(--paper); border-color:var(--navy);
+  transform:rotate(-1.2deg);
+  box-shadow:2px 2px 0 rgba(35,38,44,.35);
+}
+.chips input:focus-visible + span{ outline:3px solid var(--red); outline-offset:2px; }
+.chips.single input:checked + span{ background:var(--red); border-color:var(--red); }
+
+/* pola warunkowe */
+.cond{ display:none; margin-top:16px; }
+fieldset:has(#kier-mam:checked) .cond.kierunek{ display:block; }
+fieldset:has(#kto-dzieci:checked) .cond.dzieci{ display:block; }
+.chips:has(#odlot-inne:checked) ~ .cond.inne-lotnisko{ display:block; }
+
+/* suwak */
+.slider-wrap{ clear:both; }
+.slider-labels{
+  display:flex; justify-content:space-between;
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.08em;
+  text-transform:uppercase; color:rgba(35,38,44,.78); margin-bottom:8px;
+}
+input[type=range]{
+  width:100%; -webkit-appearance:none; appearance:none; height:4px;
+  background:linear-gradient(90deg, var(--navy), var(--paper-deep), var(--red));
+  border-radius:2px; cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:26px; height:26px; border-radius:50%;
+  background:var(--white); border:3px solid var(--ink); cursor:grab;
+}
+input[type=range]::-moz-range-thumb{
+  width:26px; height:26px; border-radius:50%;
+  background:var(--white); border:3px solid var(--ink); cursor:grab;
+}
+
+/* wybór pakietu jako znaczki do naklejenia */
+.stamp-select{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; clear:both; }
+@media (max-width:760px){ .stamp-select{ grid-template-columns:1fr; } }
+.stamp-select label{ cursor:pointer; position:relative; display:block; }
+.stamp-select input{ position:absolute; opacity:0; pointer-events:none; }
+.stamp-opt{
+  background:var(--white); padding:10px; height:100%;
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 12px) calc(100% - 12px) no-repeat,
+    radial-gradient(circle 4px at 6px 6px, #0000 97%, #000 100%) 0 0 / 12px 12px round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 12px) calc(100% - 12px) no-repeat,
+    radial-gradient(circle 4px at 6px 6px, #0000 97%, #000 100%) 0 0 / 12px 12px round;
+  transition:transform .12s ease;
+}
+.stamp-opt .inner{
+  border:2px solid rgba(35,38,44,.45); padding:16px 14px; text-align:center; height:100%;
+}
+.stamp-opt{ display:block; }
+.stamp-opt .inner{ display:block; }
+.stamp-opt .nm, .stamp-opt .pr, .stamp-opt .ds{ display:block; line-height:1.35; }
+.stamp-opt .nm{ font-family:var(--f-display); font-size:18px; font-weight:650; }
+.stamp-opt .pr{ font-family:var(--f-mono); font-size:14px; color:var(--navy); margin-top:4px; }
+.stamp-opt .ds{ font-size:13px; color:rgba(35,38,44,.78); margin-top:6px; }
+.stamp-select input:checked ~ .stamp-opt{ transform:rotate(-1.5deg); }
+.stamp-select input:checked ~ .stamp-opt .inner{ border-color:var(--red); border-width:3px; background:#FFF8F0; }
+.stamp-select input:focus-visible ~ .stamp-opt{ outline:3px solid var(--red); outline-offset:3px; }
+.stamp-check{
+  position:absolute; top:-14px; right:-10px; z-index:3; width:84px; height:84px;
+  border:2.5px solid var(--red); border-radius:50%;
+  display:none; place-items:center; text-align:center;
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--red); transform:rotate(12deg); background:rgba(255,255,255,.4);
+  pointer-events:none;
+}
+.stamp-select input:checked ~ .stamp-check{ display:grid; }
+
+/* zgody + wysyłka */
+.consent{ display:flex; gap:12px; align-items:flex-start; font-size:13.5px; clear:both; }
+.consent input{ width:20px; height:20px; margin-top:2px; accent-color:var(--red); flex-shrink:0; }
+.submit-row{ margin-top:30px; text-align:center; clear:both; }
+.submit-row .btn{ font-size:16px; padding:16px 44px; }
+.pay-note{
+  margin-top:14px; font-family:var(--f-mono); font-size:13px;
+  letter-spacing:.04em; color:rgba(35,38,44,.78);
+}
+.form-status{
+  display:none; margin-top:18px; padding:14px 18px;
+  font-family:var(--f-mono); font-size:14px; border:1.5px solid;
+}
+.form-status.ok{ display:block; border-color:var(--navy); color:var(--navy); background:#EFF4FB; }
+.form-status.err{ display:block; border-color:var(--red); color:var(--red); background:#FCF0ED; }
+.hp{ position:absolute; left:-9999px; opacity:0; }
+
+/* ============================================================
+   STOPKA
+   ============================================================ */
+footer.site{ background:var(--ink); color:var(--paper); padding:44px 0 30px; }
+footer.site .wrap{ display:flex; flex-wrap:wrap; gap:26px; align-items:center; }
+footer.site .fb{ font-family:var(--f-display); font-size:20px; font-weight:650; }
+footer.site a{ color:var(--paper); font-family:var(--f-mono); font-size:13px; }
+footer.site .legal{ margin-left:auto; display:flex; gap:18px; flex-wrap:wrap; }
+footer.site .copy{ width:100%; font-family:var(--f-mono); font-size:13px; color:rgba(246,240,226,.55); }
+
+/* ============================================================
+   GALERIA: polaroidy z podróży
+   ============================================================ */
+.gallery{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; margin-top:36px;
+}
+@media (max-width:860px){ .gallery{ grid-template-columns:repeat(2, 1fr); } }
+@media (max-width:520px){ .gallery{ grid-template-columns:1fr; max-width:340px; margin-inline:auto; } }
+.polaroid{
+  background:var(--white); padding:10px 10px 12px;
+  border:1px solid rgba(35,38,44,.25);
+  box-shadow:0 10px 22px -12px rgba(35,38,44,.45);
+  transition:transform .15s ease;
+}
+.gallery .polaroid:nth-child(odd){ transform:rotate(-1.6deg); }
+.gallery .polaroid:nth-child(even){ transform:rotate(1.4deg); }
+.gallery .polaroid:hover{ transform:rotate(0) scale(1.03); }
+.polaroid img{ aspect-ratio:3/4; object-fit:cover; width:100%; }
+.polaroid figcaption{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.06em;
+  text-align:center; margin-top:9px; color:rgba(35,38,44,.78);
+}
+
+/* ============================================================
+   POPRAWKI Z AUDYTU
+   ============================================================ */
+.cta-row{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+.chips input:checked + span::before{ content:"✓ "; }
+.slider-out{
+  font-family:var(--f-mono); font-size:13px; letter-spacing:.04em;
+  color:var(--navy); margin-top:10px;
+}
+@media (max-width:380px){ .postmark{ display:none; } }
+
+@media (prefers-reduced-motion:reduce){
+  *{ transition:none !important; animation:none !important; }
+  html{ scroll-behavior:auto; }
+}
+</style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dabf88d8ecff46b9af7a1518edc3f5ee"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<div class="airmail-strip" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="img/logo.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg style="display:none" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19c5 1 9-2 11-7 1 4 4 6 8 5-2 4-6 7-11 7-4 0-7-2-8-5z"/><path d="M15 12c1-3 4-5 7-4"/><circle cx="22" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Gołębie Latają</a>
+    <nav class="main" aria-label="Nawigacja">
+      <a href="#nadawcy" class="nh2">Nadawcy</a>
+      <a href="#przyklad">Przykładowy plan</a>
+      <a href="#proces" class="nh3">Jak to działa</a>
+      <a href="#znaczki">Pakiety</a>
+      <a href="#faq" class="nh1">FAQ</a>
+    </nav>
+    <a class="btn" href="#zlecenie">Wyślij gołębia</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="envelope">
+      <div class="address">
+        <p class="to">Do: wszystkich marzących o cudownej podróży &nbsp;·&nbsp; od: Gołębie Latają, Warszawa</p>
+        <h1>GOŁĘBIE<br><em>LATAJĄ</em></h1>
+        <p class="lede">Zapomnij o biurach podróży. Siadamy z Tobą i razem układamy wakacje, o jakich marzysz: przygoda, błogi relaks czy zwyczajnie udany urlop. Ty mówisz, czego chcesz, a resztą zajmujemy się my.</p>
+        <div class="cta-row">
+          <a class="btn" href="#zlecenie">Zaplanujemy Ci wakacje</a>
+          <a class="btn ghost" href="#przyklad">Zobacz przykładowy plan →</a>
+        </div>
+        <div class="hero-meta">
+          <span><b>48h</b> do pierwszych propozycji</span>
+          <span><b>40+</b> krajów sprawdzonych osobiście</span>
+          <span><b>100%</b> planów szytych ręcznie</span>
+        </div>
+      </div>
+      <div class="franking">
+        <div class="postmark" aria-hidden="true">Poczta<br>lotnicza<br>· PL ·</div>
+        <div class="stamp-mini">
+          <div class="inner">
+            <img src="img/logo.png" alt="">
+            <div class="val">Poczta lotnicza</div>
+          </div>
+        </div>
+        <div class="stamp-mini red">
+          <div class="inner">
+            <div class="big">48h</div>
+            <div class="val">Plan podróży</div>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img src="img/razem.jpg" alt="Michał i Paulina w podróży">
+          <figcaption>Michał &amp; Paulina · nadawcy</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NADAWCY ================= -->
+<section id="nadawcy">
+  <div class="wrap">
+    <p class="eyebrow">Nadawcy</p>
+    <h2>Dwa gołębie, jeden cel: Twój idealny wyjazd</h2>
+    <div class="senders">
+      <article class="sender">
+        <div class="inner">
+          <p class="tag">Gołąb nr 1</p>
+          <img src="img/michal.jpg" alt="Michał" loading="lazy">
+          <h3>Michał</h3>
+          <p>City break, plaże, dżungla czy koniec świata? Byłem. Widziałem wschód słońca na Saharze w Tunezji i prawdziwe życie w slumsach na Wyspach Zielonego Przylądka. W podróżach szukam ciszy, lokalnych smaków i historii, której nie ma w przewodnikach. Malediwy i Seszele nauczyły mnie, że najlepsze wakacje to te, po których wracasz spokojniejszy, niż wyjechałeś. Wiem, jak zaplanować wyjazd, żeby ten spokój odnaleźć.</p>
+        </div>
+      </article>
+      <article class="sender">
+        <div class="inner">
+          <p class="tag">Gołąb nr 2</p>
+          <img src="img/paulina.jpg" alt="Paulina" loading="lazy">
+          <h3>Paulina</h3>
+          <p>Zakynthos o zachodzie słońca, Gambia pełna kolorów i zwierząt, których nie zapomnę do końca życia, słońce Egiptu. Kocham plaże, lokalne kuchnie, opalanie się godzinami i tę idealną proporcję: 50% leżenie, 50% odkrywanie. Planując Twój wyjazd, zadbam o każdy detal, tak by wspomnienia zostały z Tobą na zawsze.</p>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section id="galeria" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Z naszych lotów</p>
+    <h2>Sprawdzamy świat na własnej skórze</h2>
+    <!-- Zdjęcia lot-1 do lot-6 przygotowane: pionowe 3:4, zoptymalizowane, bez metadanych GPS.
+         Podpisy zmieniajcie w figcaption. Możecie dodać lub usunąć polaroidy, układ sam się dopasuje. -->
+    <div class="gallery">
+      <figure class="polaroid"><img src="img/lot-1.jpg" alt="Malediwy" loading="lazy"><figcaption>Malediwy</figcaption></figure>
+      <figure class="polaroid"><img src="img/lot-2.jpg" alt="Kapadocja, Turcja" loading="lazy"><figcaption>Kapadocja, Turcja</figcaption></figure>
+      <figure class="polaroid"><img src="img/lot-3.jpg" alt="Sardynia" loading="lazy"><figcaption>Sardynia</figcaption></figure>
+      <figure class="polaroid"><img src="img/lot-4.jpg" alt="Seszele" loading="lazy"><figcaption>Seszele</figcaption></figure>
+      <figure class="polaroid"><img src="img/lot-5.jpg" alt="Paryż" loading="lazy"><figcaption>Paryż</figcaption></figure>
+      <figure class="polaroid"><img src="img/lot-6.jpg" alt="Gambia" loading="lazy"><figcaption>Gambia</figcaption></figure>
+    </div>
+    <!-- EDYCJA: gdy film będzie gotowy, odkomentujcie i wstawcie ID z YouTube:
+    <div style="margin-top:44px">
+      <div style="aspect-ratio:16/9; border:1px solid rgba(35,38,44,.25); background:#000">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TWOJE_ID" title="Gołębie Latają: z naszych podróży" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- ================= PRZYKŁADOWY PLAN ================= -->
+<section class="sample" id="przyklad">
+  <div class="wrap sample-grid">
+    <div>
+      <p class="eyebrow">Zanim zapłacisz, zobacz, co dostajesz</p>
+      <h2>Tak wygląda plan od gołębi</h2>
+      <p>Nie kupujesz kota w worku. Każdy plan to autorska teczka podróżna: konkretna, piękna i gotowa do wydruku lub na telefon.</p>
+      <ul>
+        <li>Plan dzień po dniu z godzinami otwarcia i kolejnością zwiedzania</li>
+        <li>Restauracje sprawdzone pod Twój budżet, nie pierwsze wyniki z Google</li>
+        <li>Transport, aplikacje, bilety: co kupić wcześniej, a czego nie warto</li>
+        <li>Lokalne smaki i rytuały, o których nie przeczytasz w przewodnikach</li>
+      </ul>
+      <!-- EDYCJA: podlinkujcie zanonimizowany fragment prawdziwego planu (np. Stambuł), np. /przyklad-plan.pdf -->
+      <a class="btn" href="przyklad-plan.pdf" target="_blank" rel="noopener">Pobierz przykładowe strony (PDF)</a>
+    </div>
+    <div class="dossier" aria-hidden="true">
+      <div class="page p1">
+        <div class="ph">Dzień 2 · Sultanahmet</div>
+        <div class="pt">Stare miasto krok po kroku</div>
+        <div class="ln"></div><div class="ln m"></div><div class="ln s"></div><div class="ln"></div><div class="ln m"></div>
+        <div class="map"></div>
+      </div>
+      <div class="page p2">
+        <div class="ph">Teczka podróżna № 012</div>
+        <div class="pt">Wasz plan podróży</div>
+        <div class="ln"></div><div class="ln s"></div><div class="ln m"></div><div class="ln"></div><div class="ln s"></div><div class="ln m"></div><div class="ln"></div>
+      </div>
+      <div class="page p3">
+        <div class="ph">Gdzie zjeść · budżetowo</div>
+        <div class="pt">Lokalne, nie turystyczne</div>
+        <div class="ln m"></div><div class="ln"></div><div class="ln s"></div><div class="ln m"></div><div class="ln"></div>
+        <div class="map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JAK TO DZIAŁA ================= -->
+<section id="proces">
+  <div class="wrap">
+    <p class="eyebrow">Jak to działa</p>
+    <h2>Trzy ruchy skrzydeł i plan ląduje u Ciebie</h2>
+    <ol class="steps">
+      <li>
+        <h3>Wypełniasz zlecenie</h3>
+        <p>Mówisz nam dokąd (albo pozwalasz nam wybrać), z kim, na jak długo i co kochasz w podróżach. Kilka pól, dwie minuty.</p>
+      </li>
+      <li>
+        <h3>Gołąb chwyta za pióro</h3>
+        <p>Na podstawie Twoich wskazówek wyszukujemy miejsce na idealne wakacje. Pierwsze propozycje wysyłamy w maksymalnie 48h.</p>
+      </li>
+      <li>
+        <h3>Wybierasz, reszta ląduje u Ciebie</h3>
+        <p>Dajesz znać, co wybierasz (czekamy do 72h), a my dosyłamy plan i dodatki zależne od pakietu: atrakcje, restauracje, słowniczek i więcej.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PAKIETY ================= -->
+<section class="packages" id="znaczki">
+  <div class="wrap">
+    <p class="eyebrow">Pakiety</p>
+    <h2>Wybierz swój bilet na plan podróży</h2>
+    <p style="max-width:60ch">Płatność jednorazowa, bez ukrytych kosztów. To ułamek budżetu Waszego wyjazdu, a oszczędza kilkanaście godzin szukania i porównywania.</p>
+    <p style="max-width:60ch; font-weight:600">Gwarancja trafienia: jeśli żadna z propozycji nie trafi w Wasze marzenia, przygotowujemy nowe. A jeśli i te nie zagrają, zwracamy 100% pieniędzy.</p>
+    <div class="pack-grid">
+      <article class="pack">
+        <div class="inner">
+          <div class="denom"><span>Znaczek № 1</span><span class="price">399<small> zł</small></span></div>
+          <h3>Podstawowy Lot</h3>
+          <p class="sub">Konkretny plan na szybko</p>
+          <ul>
+            <li>Propozycje lotów i zorganizowanych wycieczek pod Twoje parametry</li>
+            <li>Najważniejsze informacje o wybranym kraju i mieście</li>
+            <li>Lista atrakcji i wycieczek do odbycia na miejscu</li>
+          </ul>
+          <a class="btn navy" href="#zlecenie" data-pick="podstawowy">Wybierz ten bilet</a>
+        </div>
+      </article>
+      <article class="pack featured">
+        <span class="flag">Najczęściej wybierany</span>
+        <div class="inner">
+          <div class="denom"><span>Znaczek № 2</span><span class="price">899<small> zł</small></span></div>
+          <h3>Kompletny Lot</h3>
+          <p class="sub">Plan gotowy dzień po dniu</p>
+          <ul>
+            <li><b>Wszystko z Podstawowego Lotu</b></li>
+            <li>Propozycje lotów i hoteli dopasowane do budżetu</li>
+            <li>Szczegółowy plan dzień po dniu pod Twoje preferencje</li>
+            <li>Rekomendacje restauracji: budżetowo i na bogato</li>
+            <li>Praktyczny przewodnik: transport, aplikacje, co spakować</li>
+            <li>Słowniczek atrakcji i lokalnej kuchni</li>
+          </ul>
+          <a class="btn" href="#zlecenie" data-pick="kompletny">Wybierz ten bilet</a>
+        </div>
+      </article>
+      <article class="pack premium">
+        <div class="inner">
+          <div class="denom"><span>Znaczek № 3</span><span class="price">1899<small> zł</small></span></div>
+          <h3>Lot Premium</h3>
+          <p class="sub">Dla wspierających gołębie życie: plan, pełne wsparcie i pamiątki</p>
+          <ul>
+            <li><b>Wszystko z Kompletnego Lotu</b></li>
+            <li>Interaktywna mapa Google ze wszystkimi miejscami z planu</li>
+            <li>Wsparcie na czacie w trakcie wyjazdu. Bez infolinii i botów: odpisujemy osobiście, zwykle szybko, czasem dopiero po powrocie z plaży</li>
+            <li>Kolekcjonerskie wydanie planu z numerem egzemplarza</li>
+            <li>Pamiątkowa pocztówka wysłana tradycyjną pocztą, ze stemplem i podpisem</li>
+            <li>Bonus: krótki filmik z Waszej podróży na naszym kanale (jeśli zechcecie)</li>
+          </ul>
+          <a class="btn navy" href="#zlecenie" data-pick="premium">Wybierz ten bilet</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <p class="eyebrow">Poczta zwrotna</p>
+    <h2>Pytania, które dostajemy najczęściej</h2>
+    <details>
+      <summary>Czym różnicie się od biura podróży?</summary>
+      <p>Nie sprzedajemy wycieczek i nie bierzemy prowizji od hoteli. Układamy plan skrojony pod Was, a rezerwacji dokonujecie sami, z naszych linków i instrukcji. Dzięki temu doradzamy to, co dla Was najlepsze, a nie to, co się najlepiej sprzedaje.</p>
+    </details>
+    <details>
+      <summary>Czy rezerwujecie za mnie loty i hotele?</summary>
+      <p>Nie, i to celowo. Dostajesz konkretne propozycje z linkami, więc rezerwujesz w kilka minut na własne nazwisko i kartę. Zero pośredników, zero ukrytych marż.</p>
+    </details>
+    <details>
+      <summary>Co jeśli propozycje mi się nie spodobają?</summary>
+      <p>Wtedy rozmawiamy dalej i przygotowujemy nowe propozycje w ramach tej samej opłaty. A jeśli i te nie trafią w Wasze marzenia, zwracamy 100% pieniędzy. Wystarczy dać nam znać w oknie na decyzję (72h od otrzymania propozycji). Prościej się nie da: albo trafiamy, albo oddajemy pieniądze.</p>
+    </details>
+    <details>
+      <summary>Jak dostanę gotowy plan?</summary>
+      <p>Jako dopracowany plan PDF na maila, gotowy do wydruku i wygodny na telefonie. W pakiecie Premium dochodzi interaktywna mapa Google i wsparcie na czacie w trakcie wyjazdu.</p>
+    </details>
+    <details>
+      <summary>Ile trwa cały proces?</summary>
+      <p>Pierwsze propozycje kierunków dostajesz w maksymalnie 48h od zamówienia. Na Twoją decyzję czekamy do 72h, a zaraz po niej dosyłamy pełny plan. Całość zwykle zamyka się w kilka dni, na spokojnie przed wyjazdem.</p>
+      <!-- EDYCJA: potwierdźcie czas dostarczenia pełnego planu po decyzji klienta -->
+    </details>
+    <details>
+      <summary>Czy ceny lotów i hoteli z propozycji mogą się zmienić?</summary>
+      <p>Mogą, i to niestety nie od nas zależy. Linie lotnicze i hotele zmieniają ceny dynamicznie, czasem z godziny na godzinę. W propozycjach podajemy ceny z dnia wysyłki, więc im szybciej zdecydujesz i zarezerwujesz, tym większa szansa, że złapiesz je bez zmian. A jeśli coś zdąży podrożeć, podpowiadamy alternatywę.</p>
+    </details>
+    <details>
+      <summary>Jak wygląda płatność i czy mogę odstąpić od umowy?</summary>
+      <p>Płatność przechodzi przez bezpieczną bramkę Stripe: karta, BLIK, Apple Pay, Google Pay lub Klarna, także z opcją zapłaty później. Ponieważ zaczynamy pracę od razu, przed upływem 14 dni, prawo odstąpienia wygasa z chwilą wykonania usługi. Szczegóły znajdziesz w <a href="regulamin.html">regulaminie</a>.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= FORMULARZ ================= -->
+<section class="order" id="zlecenie">
+  <div class="wrap">
+    <p class="eyebrow">Zlecenie wykonania planu</p>
+    <h2>Wyślij gołębia</h2>
+    <p style="max-width:60ch">Dwie minuty i koniec ze stresem planowania. Im więcej nam powiesz, tym celniej poleci gołąb. Pola oznaczone gwiazdką są obowiązkowe, reszta to mile widziane wskazówki.</p>
+
+    <form class="waybill" id="orderForm" novalidate>
+      <div class="waybill-head">
+        <div>
+          <p class="t1">List przewozowy · Poczta lotnicza</p>
+          <h3>Zlecenie lotu</h3>
+        </div>
+        <p class="no">№ <span id="orderNo">····</span><br>Warszawa, <span id="orderDate"></span></p>
+      </div>
+
+      <!-- honeypot antyspamowy -->
+      <input class="hp" type="text" name="firma" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <fieldset>
+        <legend><b>01</b> · Nadawca</legend>
+        <div class="row three">
+          <div class="field">
+            <label for="f-imie">Imię *</label>
+            <input type="text" id="f-imie" name="imie" required autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail * <small>(tu wyląduje plan)</small></label>
+            <input type="email" id="f-email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-tel">Telefon <small>(opcjonalnie)</small></label>
+            <input type="tel" id="f-tel" name="telefon" autocomplete="tel">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>02</b> · Kierunek</legend>
+        <div class="chips single" role="radiogroup" aria-label="Kierunek">
+          <label><input type="radio" name="kierunek_tryb" value="zaproponujcie" checked><span>Zaproponujcie coś dla nas</span></label>
+          <label><input type="radio" name="kierunek_tryb" value="mam" id="kier-mam"><span>Mam już wymarzony kierunek</span></label>
+        </div>
+        <div class="cond kierunek field">
+          <label for="f-kierunek">Dokąd chcesz lecieć?</label>
+          <input type="text" id="f-kierunek" name="kierunek" placeholder="np. Japonia, Sycylia, Stambuł…">
+        </div>
+        <div class="field" style="margin-top:16px">
+          <label for="f-historia">Gdzie już byliście i czego unikać? <small>(opcjonalnie, ale bardzo pomaga)</small></label>
+          <input type="text" id="f-historia" name="gdzie_bylismy" placeholder="np. byliśmy w Grecji i Tajlandii; nie chcemy all inclusive">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>03</b> · Charakter wyjazdu <small style="text-transform:none; letter-spacing:0">(zaznacz, ile chcesz)</small></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="charakter" value="plaza-relaks"><span>Plaża i relaks</span></label>
+          <label><input type="checkbox" name="charakter" value="zwiedzanie-kultura"><span>Zwiedzanie i kultura</span></label>
+          <label><input type="checkbox" name="charakter" value="city-break"><span>City break</span></label>
+          <label><input type="checkbox" name="charakter" value="egzotyka"><span>Egzotyka, koniec świata</span></label>
+          <label><input type="checkbox" name="charakter" value="gory"><span>Góry</span></label>
+          <label><input type="checkbox" name="charakter" value="natura-zwierzeta"><span>Natura i zwierzęta</span></label>
+          <label><input type="checkbox" name="charakter" value="road-trip"><span>Road trip</span></label>
+          <label><input type="checkbox" name="charakter" value="ochloda"><span>Wyjazd dla ochłody</span></label>
+          <label><input type="checkbox" name="charakter" value="zima-narty"><span>Zima i narty</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>04</b> · Standard wyjazdu</legend>
+        <div class="chips single" role="radiogroup" aria-label="Standard">
+          <label><input type="radio" name="standard" value="budzetowo"><span>Budżetowo</span></label>
+          <label><input type="radio" name="standard" value="klasycznie" checked><span>Klasycznie</span></label>
+          <label><input type="radio" name="standard" value="komfortowo"><span>Komfortowo</span></label>
+          <label><input type="radio" name="standard" value="luksusowo"><span>Luksusowo</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>05</b> · Kto leci</legend>
+        <div class="chips single" role="radiogroup" aria-label="Kto leci">
+          <label><input type="radio" name="kto" value="solo"><span>Solo</span></label>
+          <label><input type="radio" name="kto" value="para" checked><span>Para</span></label>
+          <label><input type="radio" name="kto" value="rodzina"><span>Rodzina</span></label>
+          <label><input type="radio" name="kto" value="rodzina-dzieci" id="kto-dzieci"><span>Rodzina z dziećmi</span></label>
+          <label><input type="radio" name="kto" value="znajomi"><span>Grupa znajomych</span></label>
+        </div>
+        <div class="cond dzieci field">
+          <label for="f-dzieci">Wiek dzieci</label>
+          <input type="text" id="f-dzieci" name="wiek_dzieci" placeholder="np. 4 i 9 lat">
+        </div>
+        <div class="row" style="margin-top:18px">
+          <div class="field">
+            <label for="f-osoby">Liczba osób *</label>
+            <input type="number" id="f-osoby" name="liczba_osob" min="1" max="30" value="2" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>06</b> · Podróż i termin</legend>
+        <label style="font-size:13.5px; font-weight:600; margin-bottom:10px; display:block">Czym chcecie podróżować <small style="font-weight:400; color:rgba(35,38,44,.78)">(możesz zaznaczyć kilka)</small></label>
+        <div class="chips" style="margin-bottom:22px">
+          <label><input type="checkbox" name="transport" value="samolot" checked><span>Samolot</span></label>
+          <label><input type="checkbox" name="transport" value="auto"><span>Własne auto</span></label>
+          <label><input type="checkbox" name="transport" value="autokar"><span>Autokar</span></label>
+          <label><input type="checkbox" name="transport" value="pociag"><span>Pociąg</span></label>
+          <label><input type="checkbox" name="transport" value="dowolnie"><span>Wszystko jedno</span></label>
+        </div>
+        <label style="font-size:13.5px; font-weight:600; margin-bottom:10px; display:block">Skąd możesz wylecieć lub wyjechać <small style="font-weight:400; color:rgba(35,38,44,.78)">(możesz zaznaczyć kilka)</small></label>
+        <div class="chips">
+          <label><input type="checkbox" name="odlot" value="warszawa"><span>Warszawa</span></label>
+          <label><input type="checkbox" name="odlot" value="krakow"><span>Kraków</span></label>
+          <label><input type="checkbox" name="odlot" value="gdansk"><span>Gdańsk</span></label>
+          <label><input type="checkbox" name="odlot" value="wroclaw"><span>Wrocław</span></label>
+          <label><input type="checkbox" name="odlot" value="poznan"><span>Poznań</span></label>
+          <label><input type="checkbox" name="odlot" value="katowice"><span>Katowice</span></label>
+          <label><input type="checkbox" name="odlot" value="rzeszow"><span>Rzeszów</span></label>
+          <label><input type="checkbox" name="odlot" value="szczecin"><span>Szczecin</span></label>
+          <label><input type="checkbox" name="odlot" value="bydgoszcz"><span>Bydgoszcz</span></label>
+          <label><input type="checkbox" name="odlot" value="lublin"><span>Lublin</span></label>
+          <label><input type="checkbox" name="odlot" value="lodz"><span>Łódź</span></label>
+          <label><input type="checkbox" name="odlot" value="olsztyn"><span>Olsztyn-Mazury</span></label>
+          <label><input type="checkbox" name="odlot" value="inne" id="odlot-inne"><span>Inne</span></label>
+          <label><input type="checkbox" name="odlot" value="dowolne"><span>Wszystko jedno, dopasujcie najlepsze</span></label>
+        </div>
+        <div class="cond inne-lotnisko field">
+          <label for="f-lotnisko">Wpisz dodatkowe miasto lub lotnisko wylotu</label>
+          <input type="text" id="f-lotnisko" name="odlot_inne" placeholder="np. Berlin, Praga">
+        </div>
+        <div class="row" style="margin-top:18px">
+          <div class="field">
+            <label for="f-termin">Termin * <small>(dokładne daty lub miesiąc)</small></label>
+            <input type="text" id="f-termin" name="termin" required placeholder="np. 12–19 września albo „październik"">
+          </div>
+          <div class="field">
+            <label for="f-dni">Długość wyjazdu (dni) *</label>
+            <input type="number" id="f-dni" name="dlugosc_dni" min="2" max="90" required placeholder="np. 7">
+          </div>
+        </div>
+        <div style="margin-top:18px">
+          <label style="font-size:13.5px; font-weight:600; margin-bottom:10px; display:block">Czy daty są elastyczne? <small style="font-weight:400; color:rgba(35,38,44,.78)">(elastyczność potrafi mocno obniżyć ceny lotów)</small></label>
+          <div class="chips single" role="radiogroup" aria-label="Elastyczność dat">
+            <label><input type="radio" name="elastycznosc" value="sztywne"><span>Sztywne daty</span></label>
+            <label><input type="radio" name="elastycznosc" value="2-3-dni" checked><span>Plus minus 2-3 dni</span></label>
+            <label><input type="radio" name="elastycznosc" value="pelna"><span>Pełna elastyczność</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>07</b> · Budżet i styl</legend>
+        <div class="row">
+          <div class="field">
+            <label for="f-budzet">Budżet na osobę <small>(wszystko wliczone)</small></label>
+            <select id="f-budzet" name="budzet">
+              <option value="do-1500">do 1 500 zł</option>
+              <option value="1500-3000">1 500 – 3 000 zł</option>
+              <option value="3000-6000" selected>3 000 – 6 000 zł</option>
+              <option value="6000-12000">6 000 – 12 000 zł</option>
+              <option value="12000-plus">powyżej 12 000 zł</option>
+              <option value="nie-wiem">jeszcze nie wiem</option>
+            </select>
+          </div>
+        </div>
+        <div class="slider-wrap" style="margin-top:24px">
+          <div class="slider-labels">
+            <span>100% leżenie</span><span>50 / 50</span><span>100% odkrywanie</span>
+          </div>
+          <input type="range" name="styl" id="stylRange" min="0" max="100" value="50" step="10" aria-label="Proporcja leżenia do odkrywania">
+          <p class="slider-out" id="stylOut">Obecnie: 50% leżenia / 50% odkrywania</p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>08</b> · Co jest dla Ciebie ważne w podróży</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="wazne" value="cisza"><span>Cisza</span></label>
+          <label><input type="checkbox" name="wazne" value="kuchnia"><span>Lokalna kuchnia</span></label>
+          <label><input type="checkbox" name="wazne" value="historia"><span>Historia</span></label>
+          <label><input type="checkbox" name="wazne" value="noc"><span>Życie nocne</span></label>
+          <label><input type="checkbox" name="wazne" value="spa"><span>Relaks i SPA</span></label>
+          <label><input type="checkbox" name="wazne" value="sport"><span>Aktywnie i sport</span></label>
+          <label><input type="checkbox" name="wazne" value="sztuka"><span>Sztuka i architektura</span></label>
+          <label><input type="checkbox" name="wazne" value="zakupy"><span>Zakupy</span></label>
+        </div>
+        <div class="row" style="margin-top:18px">
+          <div class="field">
+            <label for="f-dieta">Kuchnia i dieta <small>(wege, alergie, „jemy wszystko")</small></label>
+            <input type="text" id="f-dieta" name="dieta" placeholder="np. jedna osoba wege, bez orzechów">
+          </div>
+          <div class="field">
+            <label for="f-naj">Najlepszy i najgorszy wyjazd do tej pory <small>(opcjonalnie)</small></label>
+            <input type="text" id="f-naj" name="naj_wyjazdy" placeholder="np. kochamy Lizbonę, męczarnia w Hurghadzie">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>09</b> · Naklej znaczek: wybierz pakiet *</legend>
+        <div class="stamp-select">
+          <label>
+            <input type="radio" name="pakiet" value="podstawowy" required>
+            <span class="stamp-check">Wybrano<br>· PL ·</span>
+            <span class="stamp-opt"><span class="inner">
+              <span class="nm">Podstawowy Lot</span>
+              <span class="pr">399 zł</span>
+              <span class="ds">Konkretny plan na szybko</span>
+            </span></span>
+          </label>
+          <label>
+            <input type="radio" name="pakiet" value="kompletny">
+            <span class="stamp-check">Wybrano<br>· PL ·</span>
+            <span class="stamp-opt"><span class="inner">
+              <span class="nm">Kompletny Lot</span>
+              <span class="pr">899 zł</span>
+              <span class="ds">Plan gotowy dzień po dniu</span>
+            </span></span>
+          </label>
+          <label>
+            <input type="radio" name="pakiet" value="premium">
+            <span class="stamp-check">Wybrano<br>· PL ·</span>
+            <span class="stamp-opt"><span class="inner">
+              <span class="nm">Lot Premium</span>
+              <span class="pr">1899 zł</span>
+              <span class="ds">Plan, pełne wsparcie i pamiątki</span>
+            </span></span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>10</b> · Cokolwiek jeszcze powinniśmy wiedzieć</legend>
+        <textarea name="uwagi" aria-label="Dodatkowe uwagi" placeholder="Rocznica? Lęk przed lataniem? Marzenie z dzieciństwa? Piszcie śmiało."></textarea>
+        <div class="row" style="margin-top:18px">
+          <div class="field">
+            <label for="f-zrodlo">Skąd o nas wiesz? <small>(opcjonalnie)</small></label>
+            <select id="f-zrodlo" name="skad_o_nas">
+              <option value="">wybierz...</option>
+              <option value="instagram">Instagram</option>
+              <option value="tiktok">TikTok</option>
+              <option value="google">Google</option>
+              <option value="znajomi">Od znajomych</option>
+              <option value="inne">Inne</option>
+            </select>
+          </div>
+        </div>
+        <label class="consent" style="margin-top:20px">
+          <input type="checkbox" name="zgoda" required>
+          <span>Żądam rozpoczęcia realizacji przed upływem 14 dni i przyjmuję do wiadomości, że z chwilą wykonania usługi tracę prawo odstąpienia od umowy. Akceptuję <a href="regulamin.html" target="_blank" rel="noopener">regulamin</a> i <a href="polityka-prywatnosci.html" target="_blank" rel="noopener">politykę prywatności</a>. *</span>
+        </label>
+        <label class="consent" style="margin-top:12px">
+          <input type="checkbox" name="zgoda_marketing">
+          <span>Chcę czasem dostawać od gołębi pocztówki z pomysłami na podróże. Zero spamu, obiecujemy. <small>(opcjonalnie)</small></span>
+        </label>
+      </fieldset>
+
+      <div class="submit-row">
+        <button type="submit" class="btn" id="submitBtn">Wyślij gołębia ✈</button>
+        <p class="pay-note">Przejdziesz do bezpiecznej płatności: karta, BLIK, Apple Pay, Google Pay lub Klarna (możliwość zapłaty później).</p>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span class="fb">Gołębie Latają</span>
+    <a href="mailto:lecimy@golebielataja.pl">lecimy@golebielataja.pl</a>
+    <a href="https://www.instagram.com/golebie.lataja/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@golebielataja1" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/golebie.lataja" target="_blank" rel="noopener">Facebook</a>
+    <span class="legal">
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <a href="regulamin.html">Regulamin</a>
+    </span>
+    <span class="copy">© <span id="year"></span> Gołębie Latają · plan podróży gotowy w 48h · RF Michał Gołąb · NIP 5213757913 · Warszawa</span>
+  </div>
+</footer>
+
+<div class="airmail-strip" aria-hidden="true"></div>
+
+<script>
+/* ============================================================
+   KONFIGURACJA: uzupełnij przed wdrożeniem
+   ============================================================ */
+const CONFIG = {
+  // Splitforms: klucz dostępu z Waszego konta
+  SPLITFORMS_ACCESS_KEY: "2f8f63a3729c4ba193721a2786c03fe8",
+  // Endpoint potwierdzony na poprzedniej wersji strony:
+  SPLITFORMS_ENDPOINT: "https://splitforms.com/api/submit",
+  // EDYCJA: wklej swoje trzy Stripe Payment Links:
+  STRIPE_LINKS: {
+    podstawowy: "https://buy.stripe.com/dRm8wO2PXculfyW8bO6Vq00",   // Podstawowy Lot, 399 zł
+    kompletny:  "https://buy.stripe.com/dRmfZggGNbqh4Ui8bO6Vq01",   // Kompletny Lot, 899 zł
+    premium:    "https://buy.stripe.com/dRm5kC8ah0LD5YmajW6Vq03"    // Lot Premium, 1899 zł
+  }
+};
+
+/* Numer zlecenia i data, klimat listu przewozowego */
+const now = new Date();
+document.getElementById("year").textContent = now.getFullYear();
+document.getElementById("orderDate").textContent =
+  now.toLocaleDateString("pl-PL", { day:"2-digit", month:"2-digit", year:"numeric" });
+document.getElementById("orderNo").textContent =
+  now.getFullYear().toString().slice(2) + "-" +
+  String(Math.floor(1000 + Math.random() * 9000));
+
+/* Przyciski „Wybierz ten bilet" wstępnie zaznaczają pakiet w formularzu */
+document.querySelectorAll("[data-pick]").forEach(a => {
+  a.addEventListener("click", () => {
+    const r = document.querySelector(`input[name="pakiet"][value="${a.dataset.pick}"]`);
+    if (r) r.checked = true;
+  });
+});
+
+/* Suwak stylu: pokazuj wybraną proporcję */
+const stylRange = document.getElementById("stylRange");
+const stylOut = document.getElementById("stylOut");
+if (stylRange && stylOut) {
+  stylRange.addEventListener("input", () => {
+    const v = Number(stylRange.value);
+    stylOut.textContent = "Obecnie: " + (100 - v) + "% leżenia / " + v + "% odkrywania";
+  });
+}
+
+/* Wysyłka: Splitforms → Stripe */
+const form = document.getElementById("orderForm");
+const status = document.getElementById("formStatus");
+const submitBtn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  status.className = "form-status";
+
+  if (form.firma.value) return; // honeypot, cichy odrzut botów
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  const fd = new FormData(form);
+  const data = {};
+  for (const [k, v] of fd.entries()) {
+    if (k === "firma") continue;
+    if (data[k] !== undefined) {
+      data[k] = [].concat(data[k], v);
+    } else {
+      data[k] = v;
+    }
+  }
+
+  // Czytelny brief zlecenia, jedno pole = jedna linia
+  const brief = Object.entries(data)
+    .map(([k, v]) => k + ": " + (Array.isArray(v) ? v.join(", ") : v))
+    .join("\n");
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Gołąb startuje…";
+
+  try {
+    const body = new URLSearchParams({
+      access_key: CONFIG.SPLITFORMS_ACCESS_KEY,
+      subject: "Nowe zlecenie planu: " + (data.imie || "?") + " · " + (data.pakiet || "?"),
+      name: data.imie || "",
+      email: data.email || "",
+      message: brief + "\n\nZrodlo: golebielataja.pl / list przewozowy v2 · " + now.toISOString()
+    });
+    const res = await fetch(CONFIG.SPLITFORMS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json" },
+      body: body.toString()
+    });
+    if (!res.ok) throw new Error("Splitforms: " + res.status);
+
+    const link = CONFIG.STRIPE_LINKS[data.pakiet];
+    if (link) {
+      status.textContent = "Zlecenie przyjęte. Przenosimy Cię do płatności…";
+      status.classList.add("ok");
+      window.location.href = link + (link.includes("?") ? "&" : "?") +
+        "prefilled_email=" + encodeURIComponent(data.email || "");
+    } else {
+      status.textContent = "Zlecenie przyjęte! Odezwiemy się z linkiem do płatności na podany e-mail.";
+      status.classList.add("ok");
+      form.reset();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Wyślij gołębia ✈";
+    }
+  } catch (err) {
+    console.error(err);
+    status.innerHTML = "Coś zatrzymało gołębia w locie. Spróbuj ponownie albo napisz do nas: <a href='mailto:lecimy@golebielataja.pl'>lecimy@golebielataja.pl</a>";
+    status.classList.add("err");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Wyślij gołębia ✈";
+  }
+});
+</script>
+</body>
+</html>
