@@ -1,0 +1,11 @@
+<svg viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gołębie Latają">
+  <!-- smuga poczty lotniczej -->
+  <path d="M8 44 L32 44 L26 51 L2 51 Z" fill="#C8371F"/>
+  <path d="M4 55 L28 55 L22 62 L-2 62 Z" fill="#1E3A6D"/>
+  <path d="M0 66 L24 66 L18 73 L-6 73 Z" fill="#C8371F"/>
+  <!-- gołąb origami -->
+  <g transform="translate(34,14)">
+    <path d="M112 38 L96 26 L64 6 L52 34 L20 28 L4 44 L24 50 L58 66 L90 56 Z" fill="#1E3A6D"/>
+    <path d="M64 6 L52 34 L84 44 Z" fill="#16294E"/>
+  </g>
+</svg>
