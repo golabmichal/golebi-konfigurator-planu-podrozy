@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="robots" content="noindex">
+<title>Gołąb zabłądził · Gołębie Latają</title>
+<link rel="icon" type="image/svg+xml" href="/img/golab-sygnet.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<meta name="theme-color" content="#F6F0E2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{ --paper:#F6F0E2; --ink:#23262C; --red:#C8371F; --navy:#1E3A6D; --white:#FDFBF5; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ color-scheme:light only; background:var(--paper); }
+body{
+  font-family:"IBM Plex Sans", system-ui, sans-serif; font-size:17px; line-height:1.6;
+  color:var(--ink); background:var(--paper);
+  min-height:100vh; display:flex; flex-direction:column;
+}
+.strip{
+  height:14px; flex-shrink:0;
+  background:repeating-linear-gradient(-45deg,
+    var(--red) 0 12px, var(--paper) 12px 24px,
+    var(--navy) 24px 36px, var(--paper) 36px 48px);
+}
+main{ flex:1; display:grid; place-items:center; padding:48px 20px; text-align:center; }
+.box{ max-width:520px; }
+.code{
+  font-family:"IBM Plex Mono", monospace; font-size:14px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--red); margin-bottom:14px;
+}
+img.dove{ width:150px; margin:0 auto 26px; display:block; transform:rotate(-8deg); }
+h1{
+  font-family:"Fraunces", Georgia, serif; font-weight:650;
+  font-size:clamp(30px, 6vw, 42px); line-height:1.1; margin-bottom:14px;
+}
+p{ margin-bottom:26px; }
+.back{
+  display:inline-block;
+  font-family:"IBM Plex Mono", monospace; font-size:14px; letter-spacing:.05em;
+  background:var(--navy); color:var(--white); text-decoration:none;
+  border:2px solid var(--ink); border-radius:3px; padding:12px 24px;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.back:hover{ transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink); }
+</style>
+</head>
+<body>
+<div class="strip" aria-hidden="true"></div>
+<main>
+  <div class="box">
+    <p class="code">Błąd doręczenia · 404</p>
+    <img class="dove" src="/img/golab-sygnet.svg" alt="" onerror="this.style.display='none'">
+    <h1>Gołąb zabłądził</h1>
+    <p>Strona, której szukasz, nie istnieje albo zmieniła adres. Ale spokojnie: lot trwa dalej, a plan czeka pod właściwym adresem.</p>
+    <a class="back" href="/">← Wróć na stronę główną</a>
+  </div>
+</main>
+<div class="strip" aria-hidden="true"></div>
+</body>
+</html>
