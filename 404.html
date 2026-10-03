@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <meta name="robots" content="noindex">
+<script>
+/* Appka webowa (Expo) pod /zlecenie/ to jedna strona: GitHub Pages nie zna jej tras,
+   więc /zlecenie/lot/abc odsyłamy do /zlecenie/?sciezka=/lot/abc, a appka przywraca adres.
+   Bez pętli: samo /zlecenie/ i adresy z ?sciezka= zostają na tej stronie 404. */
+(function () {
+  var p = location.pathname;
+  var baza = "/zlecenie/";
+  if (p.indexOf(baza) !== 0 || p === baza || p === baza + "index.html") return;
+  if (location.search.indexOf("sciezka=") !== -1) return;
+  var reszta = "/" + p.slice(baza.length) + location.search;
+  location.replace(baza + "?sciezka=" + encodeURIComponent(reszta) + location.hash);
+})();
+</script>
 <title>Gołąb zabłądził · Gołębie Latają</title>
 <link rel="icon" type="image/svg+xml" href="/img/golab-sygnet.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
