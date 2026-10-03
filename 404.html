@@ -12,7 +12,7 @@
    Przy bazie "/" stare adresy /zlecenie/... prowadzą do tych samych ekranów bez /zlecenie.
    Bez pętli: sama baza i adresy z ?sciezka= zostają na tej stronie 404. */
 (function () {
-  var baza = "/zlecenie/";
+  var baza = "/";
   var p = location.pathname;
   if (location.search.indexOf("sciezka=") !== -1) return;
   if (baza === "/" && p.indexOf("/zlecenie") === 0) p = p.slice("/zlecenie".length) || "/";
