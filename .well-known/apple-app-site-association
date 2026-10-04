@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["G3LBXZFAUK.pl.golebielataja.app"],
+        "components": [
+          { "/": "/zlecenie/*", "comment": "Stare linki z maili (appka pod /zlecenie)" },
+          { "/": "/lot/*", "comment": "Loty i powroty z płatności (appka pod adresem głównym, DW20)" },
+          { "/": "/dolacz/*", "comment": "Zaproszenia towarzyszy" },
+          { "/": "/p/*", "comment": "Udostępnione plany" }
+        ]
+      }
+    ]
+  }
+}
