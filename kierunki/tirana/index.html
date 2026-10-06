@@ -12,11 +12,19 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Gołębie Latają">
-<meta property="og:image" content="https://golebielataja.pl/img/razem.jpg">
+<meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Ethem_Bey_mosque%2C_Tirana_%28by_Pudelek%29.jpg/1280px-Ethem_Bey_mosque%2C_Tirana_%28by_Pudelek%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail">
 <link rel="icon" type="image/svg+xml" href="/img/golab-sygnet.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&amp;family=IBM+Plex+Sans:wght@400;600&amp;family=IBM+Plex+Mono&amp;display=swap&amp;subset=latin-ext" rel="stylesheet">
-<style>:root{--paper:#F6F0E2;--paper-deep:#EFE6D0;--ink:#23262C;--red:#C8371F;--navy:#1E3A6D;--white:#FDFBF5;--muted:#5a5d63}
+<link rel="preload" href="/fonty/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonty/fraunces-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Fraunces";font-style:normal;font-weight:700;font-display:swap;src:url(/fonty/fraunces-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:700;font-display:swap;src:url(/fonty/fraunces-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-mono-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--paper:#F6F0E2;--paper-deep:#EFE6D0;--ink:#23262C;--red:#C8371F;--navy:#1E3A6D;--white:#FDFBF5;--muted:#5a5d63}
 *{box-sizing:border-box}body{margin:0;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper)}
 .pasek{height:8px;background:repeating-linear-gradient(135deg,var(--red) 0 14px,var(--white) 14px 22px,var(--navy) 22px 36px,var(--white) 36px 44px)}
 main,header,footer{max-width:860px;margin:0 auto;padding:12px 16px}h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--navy);line-height:1.2}
@@ -41,10 +49,21 @@ ul.siatka{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))
 ul.siatka a{display:block;background:var(--paper);border-radius:8px;padding:8px 10px;text-decoration:none;height:100%}ul.siatka strong{display:block}ul.siatka span{font-size:.85rem;color:var(--muted)}
 table.mapa td,table.mapa th{text-align:center;padding:3px 2px;font-size:.8rem}table.mapa td:first-child,table.mapa th:first-child{text-align:left;white-space:nowrap}
 .o1{background:#f1dcd6}.o2{background:#eedcc7}.o3{background:#e4e5c6}.o4{background:#c5dcbf}.o5{background:#98c494}
-small,.drobne{font-size:.85rem;color:var(--muted)}ul.kolumny{columns:2;padding-left:1.2em}
+small,.drobne{font-size:.85rem;color:var(--muted)}html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}
+nav.spis{position:sticky;top:0;z-index:5;background:var(--paper);margin:8px -16px;padding:8px 16px;border-bottom:1px solid var(--paper-deep)}nav.spis .spis-tytul{display:none}
+nav.spis ol{display:flex;gap:8px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.spis a{display:block;white-space:nowrap;padding:4px 12px;border:1px solid var(--paper-deep);border-radius:999px;background:var(--white);text-decoration:none;font-size:.9rem;font-weight:600}
+nav.spis a[aria-current]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+@media(min-width:1320px){nav.spis{position:fixed;top:24px;left:calc(50% + 446px);width:220px;margin:0;padding:12px;border:0;border-radius:12px;background:var(--white)}
+nav.spis .spis-tytul{display:block;margin:0 0 6px 10px;font-family:"IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;color:var(--ink)}
+nav.spis ol{flex-direction:column;gap:2px;overflow:visible}nav.spis a{border:0;border-radius:8px;background:none;font-weight:400;white-space:normal;padding:6px 10px}
+nav.spis a[aria-current]{background:var(--paper);color:var(--navy);font-weight:600}section[id]{scroll-margin-top:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}ul.kolumny{columns:2;padding-left:1.2em}
 details{margin:8px 0}summary{cursor:pointer;font-weight:600}
+figure.foto{margin:12px 0}figure.foto img{width:100%;height:auto;border-radius:12px;display:block;background:var(--paper-deep)}figure.foto figcaption{font-size:.8rem;color:var(--muted);margin-top:4px}
+blockquote.opinia{margin:12px 0;border-left:4px solid var(--red);padding:4px 0 4px 12px}blockquote.opinia p{margin:0 0 4px}.cta blockquote.opinia small{color:#dfe3ea}
 @media(max-width:560px){ul.kolumny{columns:1}h1{font-size:1.9rem}}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Tirana","description":"Tirana (Albania): najlepsze miesiące na wyjazd, ceny lotów z Polski z ostatnich 90 dni, miejsca warte zobaczenia i formalności z polskim paszportem.","url":"https://golebielataja.pl/kierunki/tirana/","geo":{"@type":"GeoCoordinates","latitude":41.327,"longitude":19.819},"containedInPlace":{"@type":"Country","name":"Albania"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Tirana","description":"Tirana (Albania): najlepsze miesiące na wyjazd, ceny lotów z Polski z ostatnich 90 dni, miejsca warte zobaczenia i formalności z polskim paszportem.","url":"https://golebielataja.pl/kierunki/tirana/","geo":{"@type":"GeoCoordinates","latitude":41.327,"longitude":19.819},"containedInPlace":{"@type":"Country","name":"Albania"},"includesAttraction":[{"@type":"TouristAttraction","name":"Meczet Ethem Beja w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q798610"},{"@type":"TouristAttraction","name":"Plac Skanderbega w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q609528"},{"@type":"TouristAttraction","name":"Matka Albania","sameAs":"https://www.wikidata.org/wiki/Q1639016"},{"@type":"TouristAttraction","name":"Wielki Meczet w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q18715177"},{"@type":"TouristAttraction","name":"Piramida w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q177335"},{"@type":"TouristAttraction","name":"Muzeum Podsłuchu Służb Państwowych","sameAs":"https://www.wikidata.org/wiki/Q37858697"},{"@type":"TouristAttraction","name":"katedra Zmartwychwstania Pańskiego w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q1736146"},{"@type":"TouristAttraction","name":"Katedra Świętego Pawła w Tiranie","sameAs":"https://www.wikidata.org/wiki/Q600175"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Gołębie Latają","item":"https://golebielataja.pl/"},{"@type":"ListItem","position":2,"name":"Kierunki","item":"https://golebielataja.pl/kierunki/"},{"@type":"ListItem","position":3,"name":"Tirana","item":"https://golebielataja.pl/kierunki/tirana/"}]}</script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dabf88d8ecff46b9af7a1518edc3f5ee"}'></script>
 <script data-goatcounter="https://golebielataja.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -60,6 +79,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <a href="/dlugie-weekendy/">Długie weekendy</a>
 <a href="/tanie-loty/">Tanie loty</a>
 <a href="/kraje/">Kraje</a>
+<a href="/o-nas/">O nas</a>
 <a href="/">Plan w 48 h</a>
 </nav>
 <nav class="okruszki" aria-label="Ścieżka"><a href="/">Gołębie Latają</a> › <a href="/kierunki/">Kierunki</a> › <span>Tirana</span></nav>
@@ -67,11 +87,24 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <main>
 <p class="eyebrow">Miasto · Albania · około 2 h lotu z Warszawy bez przesiadek</p>
 <h1>Tirana</h1>
-<section>
+<figure class="foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Ethem_Bey_mosque%2C_Tirana_%28by_Pudelek%29.jpg/1280px-Ethem_Bey_mosque%2C_Tirana_%28by_Pudelek%29.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Meczet Ethem Beja w Tiranie" width="1200" height="1935" fetchpriority="high" decoding="async"><figcaption>Meczet Ethem Beja w Tiranie · <a href="https://commons.wikimedia.org/wiki/File:Ethem_Bey_mosque,_Tirana_(by_Pudelek).jpg" rel="nofollow noopener">Pudelek, CC BY-SA 4.0</a>, Wikimedia Commons</figcaption></figure>
+<nav class="spis" aria-label="Spis treści">
+<p class="spis-tytul">Na tej stronie</p>
+<ol>
+<li><a href="#kiedy-leciec">Kiedy lecieć</a></li>
+<li><a href="#rezerwacje">Zarezerwuj</a></li>
+<li><a href="#ceny">Ceny lotów</a></li>
+<li><a href="#rekomendacja">Rekomendacja gołębi</a></li>
+<li><a href="#co-zobaczyc">Zabytki i muzea</a></li>
+<li><a href="#formalnosci">Formalności</a></li>
+</ol>
+</nav>
+<script src="/spis.js" defer></script>
+<section id="kiedy-leciec">
 <h2>Kiedy lecieć</h2>
 <p>Najlepsze miesiące: czerwiec, lipiec, sierpień, wrzesień, październik.</p>
 <div class="przewin"><table>
-<thead><tr><th>Miesiąc</th><th>W dzień</th><th>W nocy</th><th>Dni z deszczem</th><th>Ocena</th></tr></thead>
+<thead><tr><th>Miesiąc</th><th>W dzień</th><th>W nocy</th><th>Dni z opadem</th><th>Ocena</th></tr></thead>
 <tbody>
 <tr><td><a href="/kierunki/tirana/styczen/">Styczeń</a></td><td>6°C</td><td>-1°C</td><td>12</td><td>1 z 5</td></tr>
 <tr><td><a href="/kierunki/tirana/luty/">Luty</a></td><td>8°C</td><td>0°C</td><td>11</td><td>1 z 5</td></tr>
@@ -104,7 +137,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <li><a href="/kierunki/tirana/grudzien/"><strong>Tirana w grudniu</strong><span>8°C · 1/5</span></a></li>
 </ul>
 </section>
-<section>
+<section id="rezerwacje">
 <h2>Zarezerwuj sam</h2>
 <p>Lot, nocleg i auto rezerwujesz sam, każde osobno.</p>
 <div class="partnerzy"><a class="partner glowny" href="https://www.aviasales.com/?origin_iata=WAW&amp;destination_iata=TIA&amp;marker=785120.ktirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-aviasales-ktirana">Znajdź lot</a><a class="partner" href="https://www.booking.com/searchresults.pl.html?ss=Tirana&amp;latitude=41.327&amp;longitude=19.819&amp;group_adults=2&amp;no_rooms=1" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-booking-ktirana">Szukaj noclegu</a><a class="partner" href="https://www.expedia.pl/Hotel-Search?destination=Tirana&amp;adults=2" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-expedia-ktirana">Więcej noclegów</a><a class="partner" href="https://tp.media/r?campaign_id=172&amp;marker=785120&amp;p=4845&amp;trs=581099&amp;u=https%3A%2F%2Fwww.qeeq.com%2Fpl&amp;sub_id=ktirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-qeeq-ktirana">Wynajmij auto</a><a class="partner" href="https://tp.media/r?campaign_id=89&amp;marker=785120&amp;p=2074&amp;trs=581099&amp;u=https%3A%2F%2Fwww.tiqets.com%2Fpl%2Fsearch%3Fq%3DTirana&amp;sub_id=ktirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-tiqets-ktirana">Bilety do atrakcji</a><a class="partner" href="https://www.getyourguide.pl/s/?q=Tirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-getyourguide-ktirana">Wycieczki z przewodnikiem</a><a class="partner" href="https://tp.media/r?campaign_id=541&amp;marker=785120&amp;p=8310&amp;trs=581099&amp;u=https%3A%2F%2Fwww.airalo.com%2Fpl&amp;sub_id=ktirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-airalo-ktirana">Kup eSIM</a><a class="partner" href="https://tp.media/r?campaign_id=629&amp;marker=785120&amp;p=8979&amp;trs=581099&amp;u=https%3A%2F%2Fsaily.com%2Fpl%2F&amp;sub_id=ktirana" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-saily-ktirana">partnerzy.etykiety.saily</a></div>
@@ -112,16 +145,67 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <p class="drobne"><a class="partner" href="https://rankomat.pl/ubezpieczenia-turystyczne" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-rankomat-ktirana">Porównaj ubezpieczenia</a> Porównywarka polis. Nie układamy rankingu ubezpieczycieli, wybierasz sam.</p>
 <p class="drobne">Przyciski prowadzą do serwisów partnerów: Aviasales, Booking.com, Expedia, QEEQ, Tiqets, GetYourGuide, Airalo, Saily, Rankomat. Rezerwujesz i płacisz u nich, gołębie nie widzą Twoich danych. To linki partnerskie. Jeśli coś zarezerwujesz, gołębie dostaną prowizję, a cena dla Ciebie się nie zmienia.</p>
 </section>
-<section>
+<section id="ceny">
 <h2>Najtańsze loty z Polski</h2>
-<p>Nie mamy jeszcze cen z ostatnich 90 dni. Aktualne ceny sprawdzisz w aplikacji.</p>
+<p class="drobne">Najniższe ceny za osobę z ostatnich 90 dni, z wyszukiwań w aplikacji. Orientacyjne: ceny zmieniają się codziennie.</p>
+<ul>
+<li><strong>Kraków</strong>: od 162 zł <small>(wylot 21.10.2026)</small></li>
+<li><strong>Poznań</strong>: od 168 zł <small>(wylot 30.10.2026)</small></li>
+<li><strong>Warszawa</strong>: od 170 zł <small>(wylot 31.10.2026)</small></li>
+<li><strong>Wrocław</strong>: od 177 zł <small>(wylot 12.10.2026)</small></li>
+<li><strong>Gdańsk</strong>: od 287 zł <small>(wylot 30.11.2026)</small></li>
+<li><strong>Katowice</strong>: od 426 zł <small>(wylot 14.10.2026)</small></li>
+</ul>
 </section>
-<section>
-<h2>Co zobaczyć</h2>
-<p>Listę miejsc gołębie jeszcze kompletują. Zajrzyj do aplikacji.</p>
+<section id="rekomendacja" class="rekomendacja">
+<h2>Rekomendacja gołębi</h2>
+
+<h3>Tanio, lokalnie i nietypowo</h3>
+<p>Tanie jedzenie, miejscówki i rzeczy spoza przewodników, które gołębie zebrały z lokalnych źródeł (stan na październik 2026). Przy każdej pozycji jest źródło.</p>
+<h4>Tanie jedzenie</h4>
+<ul>
+<li><strong>Byrek Special „Luani”</strong> <small>(Bardhok Biba, tanio)</small>: Byrek z mięsem, serem albo szpinakiem za grosze. Bierz na wynos i jedz jak miejscowi, na stojąco albo na ławce. <a href="https://www.myglobalviewpoint.com/restaurants-in-tirana-for-traditional-albanian-food/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Lakror&#39;Ane</strong> <small>(Pazari i Ri, tanio)</small>: Lakror, czyli albański placek ze szpinakiem lub serem, w samym środku Pazari i Ri. Tanio i sycąco. <a href="https://www.myglobalviewpoint.com/restaurants-in-tirana-for-traditional-albanian-food/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Shije Fshati</strong> <small>(Rruga e Dibrës, tanio)</small>: Wiejska kuchnia dla miejscowych: byrek, kukurec i paçe koke (zupa z baraniej głowy dla odważnych). Bez turystycznego wystroju. <a href="https://www.myglobalviewpoint.com/restaurants-in-tirana-for-traditional-albanian-food/" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Smaki i trunki</h4>
+<ul>
+<li><strong>Fërgesë e Tiranës</strong> <small>[fer-ge-se]</small>: Pieczona potrawka z papryki, pomidorów i twarogu, podawana na gorąco z chlebem. Zamów ją w Oda, polecanej knajpie z domową kuchnią. <a href="https://www.albania-spirit.com/pl/guides/najlepsze-restauracje-tirana/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Tavë kosi</strong> <small>[tawe kosi]</small>: Zapiekane jagnięcina z ryżem pod kołderką z jogurtu i jajek. Albańskie danie narodowe, które trzeba zjeść choć raz. <a href="https://www.albania-spirit.com/pl/guides/najlepsze-restauracje-tirana/" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Miejscówki</h4>
+<ul>
+<li><strong>Pazari i Ri</strong> <small>(Tirana, centrum)</small>: Odnowiony targ, gdzie miejscowi kupują warzywa, sery i przyprawy. Dookoła budki z jedzeniem, więc idź głodny. <a href="https://news.travel.orange.com/en/things-to-do-tirana" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Kolejka linowa Dajti Ekspres</strong> <small>(Góra Dajti)</small>: Kilkanaście minut w górę na Dajti i masz widok na całe miasto, a na szczycie kawiarnie i szlaki. Najlepszy widok za rozsądne pieniądze. <a href="https://news.travel.orange.com/en/things-to-do-tirana" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Nietypowe</h4>
+<ul>
+<li><strong>Bunk&#39;Art 1</strong> <small>(Przy kolejce na Dajti)</small>: Pięciopiętrowy schron atomowy z czasów Hodży, dziś muzeum całego okresu komunizmu. Chłodne, klaustrofobiczne i mocne. <a href="https://news.travel.orange.com/en/things-to-do-tirana" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>House of Leaves</strong> <small>(Tirana, centrum)</small>: Dawna siedziba tajnej policji, dziś Muzeum Tajnej Inwigilacji. Podsłuchy, ukryte kamery i teczki donosicieli. <a href="https://news.travel.orange.com/en/things-to-do-tirana" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Patent</h4>
+<ul>
+<li><strong>Bunk&#39;Art: tylko gotówka</strong> <small>(Tirana)</small>: Do Bunk&#39;Art 1 i 2 wejdziesz tylko za gotówkę, więc wypłać wcześniej. Bunk&#39;Art 1 stoi przy kolejce na Dajti, więc połącz oba w jeden dzień. <a href="https://news.travel.orange.com/en/things-to-do-tirana" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h3>Od podróżników</h3>
+<p>Nikt jeszcze nie dodał wskazówki z wyjazdu. Możesz być pierwszy.</p>
+<p><a class="przycisk" href="/?sciezka=%2Fkierunki%2Ftirana%2Fwskazowka">Byłeś tam? Dodaj wskazówkę w appce</a></p>
+</section>
+<section id="co-zobaczyc">
+<h2>Zabytki i muzea</h2>
+<ul class="kolumny">
+<li><a href="https://www.wikidata.org/wiki/Q798610">Meczet Ethem Beja w Tiranie</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q609528">Plac Skanderbega w Tiranie</a> <small>Zabytek</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q1639016">Matka Albania</a> <small>Zabytek</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q18715177">Wielki Meczet w Tiranie</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q177335">Piramida w Tiranie</a> <small>Zabytek</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q37858697">Muzeum Podsłuchu Służb Państwowych</a> <small>Muzeum</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q1736146">katedra Zmartwychwstania Pańskiego w Tiranie</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q600175">Katedra Świętego Pawła w Tiranie</a> <small>Świątynia</small></li>
+</ul>
 <p><a href="https://www.openstreetmap.org/?mlat=41.327&amp;mlon=19.819#map=11/41.327/19.819">Zobacz na mapie OpenStreetMap</a></p>
 </section>
-<section>
+<section id="formalnosci">
 <h2>Formalności z polskim paszportem</h2>
 <ul>
 <li><strong>Wystarczy dowód osobisty</strong>. Pobyt do 90 dni. </li>
@@ -135,6 +219,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <section class="cta">
 <h2>Nie chcesz układać tego sam?</h2>
 <p>Wyślij gołębia. W 48 godzin dostajesz plan: loty, noclegi, trasę dzień po dniu i miejsca, do których warto zajrzeć. Prognozę na najbliższe dni i aktualne ceny sprawdzisz w aplikacji za darmo.</p>
+<blockquote class="opinia"><p>Zależało mi na rodzinnych, tanich wakacjach all inclusive z basenami. Dostałam propozycje kierunków i najlepsze propozycje hotelowe, wszystko ekspresowo.</p><small>Paula z Otwocka, wakacje z rodziną</small></blockquote>
 <p><a class="przycisk" href="/">Zamów plan podróży</a><a class="przycisk jasny" href="/?sciezka=%2Fkierunki%2Ftirana">Otwórz w aplikacji</a></p>
 </section>
 <h2>Źródła i licencje</h2>
@@ -145,12 +230,13 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <li>Ceny lotów: Duffel i Aviasales (Travelpayouts), pomiary z wyszukiwań w aplikacji Gołębie Latają.</li>
 <li>Wjazd: stan na 25.09.2026. Rozstrzyga serwis MSZ.</li>
 </ul>
+<p class="drobne autorzy">Przygotowali: <a href="/o-nas/">Michał i Paulina</a>, Gołębie Latają.</p>
 </main>
 <footer>
 <p class="drobne">Gołębie Latają układają plany podróży. Ty mówisz, czego chcesz, my szukamy, liczymy i piszemy. Plan w 48 godzin.</p>
 <p class="drobne">Kiedy wolne: <a href="/majowka/">Majówka</a> · <a href="/boze-cialo/">Boże Ciało</a> · <a href="/ferie-zimowe/">Ferie zimowe</a> · <a href="/sylwester-za-granica/">Sylwester za granicą</a> · <a href="/swieta-w-cieple/">Święta w cieple</a> · <a href="/wakacje-z-dziecmi/">Wakacje z dziećmi</a></p>
 <p class="drobne"><a href="/poradniki/">Poradniki</a> · <a href="/porownanie/">Porównania</a> · <a href="/tanie-loty/">Tanie loty</a> · <a href="/polityka-prywatnosci.html">Polityka prywatności</a> · <a href="/regulamin.html">Regulamin</a> · <a href="#zgoda" data-cookies="1">Ustawienia cookies</a> · <a href="mailto:lecimy@golebielataja.pl">lecimy@golebielataja.pl</a></p>
-<p class="drobne">Dane odświeżamy co tydzień. Stan na 5 października 2026.</p>
+<p class="drobne">Dane odświeżamy co tydzień. Stan na 6 października 2026.</p>
 </footer>
 <div class="pasek"></div>
 </body>

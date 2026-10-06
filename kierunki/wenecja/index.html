@@ -12,11 +12,19 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Gołębie Latają">
-<meta property="og:image" content="https://golebielataja.pl/img/razem.jpg">
+<meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Venice_-_St._Marc%27s_Basilica_01.jpg/1280px-Venice_-_St._Marc%27s_Basilica_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail">
 <link rel="icon" type="image/svg+xml" href="/img/golab-sygnet.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&amp;family=IBM+Plex+Sans:wght@400;600&amp;family=IBM+Plex+Mono&amp;display=swap&amp;subset=latin-ext" rel="stylesheet">
-<style>:root{--paper:#F6F0E2;--paper-deep:#EFE6D0;--ink:#23262C;--red:#C8371F;--navy:#1E3A6D;--white:#FDFBF5;--muted:#5a5d63}
+<link rel="preload" href="/fonty/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonty/fraunces-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Fraunces";font-style:normal;font-weight:700;font-display:swap;src:url(/fonty/fraunces-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:700;font-display:swap;src:url(/fonty/fraunces-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonty/ibm-plex-sans-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-mono-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url(/fonty/ibm-plex-mono-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--paper:#F6F0E2;--paper-deep:#EFE6D0;--ink:#23262C;--red:#C8371F;--navy:#1E3A6D;--white:#FDFBF5;--muted:#5a5d63}
 *{box-sizing:border-box}body{margin:0;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper)}
 .pasek{height:8px;background:repeating-linear-gradient(135deg,var(--red) 0 14px,var(--white) 14px 22px,var(--navy) 22px 36px,var(--white) 36px 44px)}
 main,header,footer{max-width:860px;margin:0 auto;padding:12px 16px}h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--navy);line-height:1.2}
@@ -41,10 +49,21 @@ ul.siatka{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))
 ul.siatka a{display:block;background:var(--paper);border-radius:8px;padding:8px 10px;text-decoration:none;height:100%}ul.siatka strong{display:block}ul.siatka span{font-size:.85rem;color:var(--muted)}
 table.mapa td,table.mapa th{text-align:center;padding:3px 2px;font-size:.8rem}table.mapa td:first-child,table.mapa th:first-child{text-align:left;white-space:nowrap}
 .o1{background:#f1dcd6}.o2{background:#eedcc7}.o3{background:#e4e5c6}.o4{background:#c5dcbf}.o5{background:#98c494}
-small,.drobne{font-size:.85rem;color:var(--muted)}ul.kolumny{columns:2;padding-left:1.2em}
+small,.drobne{font-size:.85rem;color:var(--muted)}html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}
+nav.spis{position:sticky;top:0;z-index:5;background:var(--paper);margin:8px -16px;padding:8px 16px;border-bottom:1px solid var(--paper-deep)}nav.spis .spis-tytul{display:none}
+nav.spis ol{display:flex;gap:8px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.spis a{display:block;white-space:nowrap;padding:4px 12px;border:1px solid var(--paper-deep);border-radius:999px;background:var(--white);text-decoration:none;font-size:.9rem;font-weight:600}
+nav.spis a[aria-current]{background:var(--navy);border-color:var(--navy);color:var(--white)}
+@media(min-width:1320px){nav.spis{position:fixed;top:24px;left:calc(50% + 446px);width:220px;margin:0;padding:12px;border:0;border-radius:12px;background:var(--white)}
+nav.spis .spis-tytul{display:block;margin:0 0 6px 10px;font-family:"IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;color:var(--ink)}
+nav.spis ol{flex-direction:column;gap:2px;overflow:visible}nav.spis a{border:0;border-radius:8px;background:none;font-weight:400;white-space:normal;padding:6px 10px}
+nav.spis a[aria-current]{background:var(--paper);color:var(--navy);font-weight:600}section[id]{scroll-margin-top:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}ul.kolumny{columns:2;padding-left:1.2em}
 details{margin:8px 0}summary{cursor:pointer;font-weight:600}
+figure.foto{margin:12px 0}figure.foto img{width:100%;height:auto;border-radius:12px;display:block;background:var(--paper-deep)}figure.foto figcaption{font-size:.8rem;color:var(--muted);margin-top:4px}
+blockquote.opinia{margin:12px 0;border-left:4px solid var(--red);padding:4px 0 4px 12px}blockquote.opinia p{margin:0 0 4px}.cta blockquote.opinia small{color:#dfe3ea}
 @media(max-width:560px){ul.kolumny{columns:1}h1{font-size:1.9rem}}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Wenecja","description":"Wenecja (Włochy): najlepsze miesiące na wyjazd, ceny lotów z Polski z ostatnich 90 dni, miejsca warte zobaczenia i formalności z polskim paszportem.","url":"https://golebielataja.pl/kierunki/wenecja/","geo":{"@type":"GeoCoordinates","latitude":45.44,"longitude":12.316},"containedInPlace":{"@type":"Country","name":"Włochy"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Wenecja","description":"Wenecja (Włochy): najlepsze miesiące na wyjazd, ceny lotów z Polski z ostatnich 90 dni, miejsca warte zobaczenia i formalności z polskim paszportem.","url":"https://golebielataja.pl/kierunki/wenecja/","geo":{"@type":"GeoCoordinates","latitude":45.44,"longitude":12.316},"containedInPlace":{"@type":"Country","name":"Włochy"},"includesAttraction":[{"@type":"TouristAttraction","name":"Bazylika św. Marka w Wenecji","sameAs":"https://www.wikidata.org/wiki/Q172988"},{"@type":"TouristAttraction","name":"Pałac Dożów","sameAs":"https://www.wikidata.org/wiki/Q189883"},{"@type":"TouristAttraction","name":"Plac św. Marka w Wenecji","sameAs":"https://www.wikidata.org/wiki/Q217527"},{"@type":"TouristAttraction","name":"Gallerie dell'Accademia","sameAs":"https://www.wikidata.org/wiki/Q338330"},{"@type":"TouristAttraction","name":"Ca' d'Oro","sameAs":"https://www.wikidata.org/wiki/Q820872"},{"@type":"TouristAttraction","name":"Kościół San Giorgio Maggiore","sameAs":"https://www.wikidata.org/wiki/Q713558"},{"@type":"TouristAttraction","name":"Bazylika Santi Giovanni e Paolo w Wenecji","sameAs":"https://www.wikidata.org/wiki/Q155225"},{"@type":"TouristAttraction","name":"Ca' Pesaro","sameAs":"https://www.wikidata.org/wiki/Q756807"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Gołębie Latają","item":"https://golebielataja.pl/"},{"@type":"ListItem","position":2,"name":"Kierunki","item":"https://golebielataja.pl/kierunki/"},{"@type":"ListItem","position":3,"name":"Wenecja","item":"https://golebielataja.pl/kierunki/wenecja/"}]}</script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dabf88d8ecff46b9af7a1518edc3f5ee"}'></script>
 <script data-goatcounter="https://golebielataja.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -60,6 +79,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <a href="/dlugie-weekendy/">Długie weekendy</a>
 <a href="/tanie-loty/">Tanie loty</a>
 <a href="/kraje/">Kraje</a>
+<a href="/o-nas/">O nas</a>
 <a href="/">Plan w 48 h</a>
 </nav>
 <nav class="okruszki" aria-label="Ścieżka"><a href="/">Gołębie Latają</a> › <a href="/kierunki/">Kierunki</a> › <span>Wenecja</span></nav>
@@ -67,21 +87,34 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <main>
 <p class="eyebrow">Miasto · Włochy · około 2 h lotu z Warszawy bez przesiadek</p>
 <h1>Wenecja</h1>
-<section>
+<figure class="foto"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Venice_-_St._Marc%27s_Basilica_01.jpg/1280px-Venice_-_St._Marc%27s_Basilica_01.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" alt="Bazylika św. Marka w Wenecji" width="1200" height="800" fetchpriority="high" decoding="async"><figcaption>Bazylika św. Marka w Wenecji · <a href="https://commons.wikimedia.org/wiki/File:Venice_-_St._Marc%27s_Basilica_01.jpg" rel="nofollow noopener">Nino Barbieri, CC BY-SA 2.5</a>, Wikimedia Commons</figcaption></figure>
+<nav class="spis" aria-label="Spis treści">
+<p class="spis-tytul">Na tej stronie</p>
+<ol>
+<li><a href="#kiedy-leciec">Kiedy lecieć</a></li>
+<li><a href="#rezerwacje">Zarezerwuj</a></li>
+<li><a href="#ceny">Ceny lotów</a></li>
+<li><a href="#rekomendacja">Rekomendacja gołębi</a></li>
+<li><a href="#co-zobaczyc">Zabytki i muzea</a></li>
+<li><a href="#formalnosci">Formalności</a></li>
+</ol>
+</nav>
+<script src="/spis.js" defer></script>
+<section id="kiedy-leciec">
 <h2>Kiedy lecieć</h2>
 <p>Najlepsze miesiące: marzec, kwiecień, maj, czerwiec, lipiec, sierpień, wrzesień, październik.</p>
 <div class="przewin"><table>
-<thead><tr><th>Miesiąc</th><th>W dzień</th><th>W nocy</th><th>Dni z deszczem</th><th>Woda</th><th>Ocena</th></tr></thead>
+<thead><tr><th>Miesiąc</th><th>W dzień</th><th>W nocy</th><th>Dni z opadem</th><th>Woda</th><th>Ocena</th></tr></thead>
 <tbody>
 <tr><td><a href="/kierunki/wenecja/styczen/">Styczeń</a></td><td>7°C</td><td>2°C</td><td>8</td><td>10°C</td><td>2 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/luty/">Luty</a></td><td>9°C</td><td>2°C</td><td>8</td><td>9°C</td><td>3 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/marzec/">Marzec</a></td><td>13°C</td><td>5°C</td><td>8</td><td>11°C</td><td>4 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/kwiecien/">Kwiecień</a></td><td>16°C</td><td>9°C</td><td>10</td><td>14°C</td><td>4 z 5</td></tr>
-<tr><td><a href="/kierunki/wenecja/maj/">Maj</a></td><td>21°C</td><td>14°C</td><td>11</td><td>19°C</td><td>4 z 5</td></tr>
-<tr><td><a href="/kierunki/wenecja/czerwiec/">Czerwiec</a></td><td>25°C</td><td>18°C</td><td>9</td><td>24°C</td><td>5 z 5</td></tr>
-<tr><td><a href="/kierunki/wenecja/lipiec/">Lipiec</a></td><td>28°C</td><td>20°C</td><td>8</td><td>27°C</td><td>4 z 5</td></tr>
+<tr><td><a href="/kierunki/wenecja/maj/">Maj</a></td><td>21°C</td><td>14°C</td><td>11</td><td>17°C</td><td>4 z 5</td></tr>
+<tr><td><a href="/kierunki/wenecja/czerwiec/">Czerwiec</a></td><td>25°C</td><td>18°C</td><td>9</td><td>23°C</td><td>5 z 5</td></tr>
+<tr><td><a href="/kierunki/wenecja/lipiec/">Lipiec</a></td><td>28°C</td><td>20°C</td><td>8</td><td>26°C</td><td>4 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/sierpien/">Sierpień</a></td><td>28°C</td><td>20°C</td><td>9</td><td>27°C</td><td>4 z 5</td></tr>
-<tr><td><a href="/kierunki/wenecja/wrzesien/">Wrzesień</a></td><td>23°C</td><td>16°C</td><td>10</td><td>24°C</td><td>4 z 5</td></tr>
+<tr><td><a href="/kierunki/wenecja/wrzesien/">Wrzesień</a></td><td>23°C</td><td>16°C</td><td>10</td><td>25°C</td><td>4 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/pazdziernik/">Październik</a></td><td>18°C</td><td>12°C</td><td>10</td><td>20°C</td><td>4 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/listopad/">Listopad</a></td><td>13°C</td><td>7°C</td><td>11</td><td>16°C</td><td>3 z 5</td></tr>
 <tr><td><a href="/kierunki/wenecja/grudzien/">Grudzień</a></td><td>8°C</td><td>3°C</td><td>9</td><td>12°C</td><td>2 z 5</td></tr>
@@ -104,7 +137,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <li><a href="/kierunki/wenecja/grudzien/"><strong>Wenecja w grudniu</strong><span>8°C · 2/5</span></a></li>
 </ul>
 </section>
-<section>
+<section id="rezerwacje">
 <h2>Zarezerwuj sam</h2>
 <p>Lot, nocleg i auto rezerwujesz sam, każde osobno.</p>
 <div class="partnerzy"><a class="partner glowny" href="https://www.aviasales.com/?origin_iata=WAW&amp;destination_iata=VCE&amp;marker=785120.kwenecja" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-aviasales-kwenecja">Znajdź lot</a><a class="partner" href="https://www.booking.com/searchresults.pl.html?ss=Wenecja&amp;latitude=45.44&amp;longitude=12.316&amp;group_adults=2&amp;no_rooms=1" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-booking-kwenecja">Szukaj noclegu</a><a class="partner" href="https://www.expedia.pl/Hotel-Search?destination=Wenecja&amp;adults=2" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-expedia-kwenecja">Więcej noclegów</a><a class="partner" href="https://tp.media/r?campaign_id=172&amp;marker=785120&amp;p=4845&amp;trs=581099&amp;u=https%3A%2F%2Fwww.qeeq.com%2Fpl&amp;sub_id=kwenecja" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-qeeq-kwenecja">Wynajmij auto</a><a class="partner" href="https://tp.media/r?campaign_id=89&amp;marker=785120&amp;p=2074&amp;trs=581099&amp;u=https%3A%2F%2Fwww.tiqets.com%2Fpl%2Fsearch%3Fq%3DWenecja&amp;sub_id=kwenecja" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-tiqets-kwenecja">Bilety do atrakcji</a><a class="partner" href="https://www.getyourguide.pl/s/?q=Wenecja" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-getyourguide-kwenecja">Wycieczki z przewodnikiem</a></div>
@@ -112,16 +145,68 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <p class="drobne"><a class="partner" href="https://rankomat.pl/ubezpieczenia-turystyczne" rel="sponsored nofollow noopener" target="_blank" data-goatcounter-click="p-rankomat-kwenecja">Porównaj ubezpieczenia</a> Porównywarka polis. Nie układamy rankingu ubezpieczycieli, wybierasz sam.</p>
 <p class="drobne">Przyciski prowadzą do serwisów partnerów: Aviasales, Booking.com, Expedia, QEEQ, Tiqets, GetYourGuide, Rankomat. Rezerwujesz i płacisz u nich, gołębie nie widzą Twoich danych. To linki partnerskie. Jeśli coś zarezerwujesz, gołębie dostaną prowizję, a cena dla Ciebie się nie zmienia.</p>
 </section>
-<section>
+<section id="ceny">
 <h2>Najtańsze loty z Polski</h2>
-<p>Nie mamy jeszcze cen z ostatnich 90 dni. Aktualne ceny sprawdzisz w aplikacji.</p>
+<p class="drobne">Najniższe ceny za osobę z ostatnich 90 dni, z wyszukiwań w aplikacji. Orientacyjne: ceny zmieniają się codziennie.</p>
+<ul>
+<li><strong>Warszawa</strong>: od 145 zł <small>(wylot 07.10.2026)</small></li>
+<li><strong>Gdańsk</strong>: od 174 zł <small>(wylot 27.11.2026)</small></li>
+<li><strong>Kraków</strong>: od 176 zł <small>(wylot 20.10.2026)</small></li>
+<li><strong>Wrocław</strong>: od 241 zł <small>(wylot 12.02.2027)</small></li>
+<li><strong>Poznań</strong>: od 434 zł <small>(wylot 05.10.2026)</small></li>
+<li><strong>Katowice</strong>: od 463 zł <small>(wylot 21.11.2026)</small></li>
+</ul>
 </section>
-<section>
-<h2>Co zobaczyć</h2>
-<p>Listę miejsc gołębie jeszcze kompletują. Zajrzyj do aplikacji.</p>
+<section id="rekomendacja" class="rekomendacja">
+<h2>Rekomendacja gołębi</h2>
+
+<h3>Tanio, lokalnie i nietypowo</h3>
+<p>Tanie jedzenie, miejscówki i rzeczy spoza przewodników, które gołębie zebrały z lokalnych źródeł (stan na październik 2026). Przy każdej pozycji jest źródło.</p>
+<h4>Tanie jedzenie</h4>
+<ul>
+<li><strong>Osteria All&#39;Arco</strong> <small>(San Polo, tanio)</small>: Mała osteria na bocznej uliczce w San Polo: cicchetti, polpette i sardynki w sosie saor. Bierz kilka przekąsek i kieliszek wina, wyjdziesz najedzony. <a href="https://tablejourney.com/italy/venice/street-food/all-arco/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Cantina Do Mori</strong> <small>(San Polo, tanio)</small>: Stary bacaro przy Rialto: cicchetti i „ombre” przy ladzie, wszyscy stoją. Zamów kilka drobiazgów i szklankę wina. <a href="https://tablejourney.com/italy/venice/street-food/cantina-do-mori/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Osteria al Squero</strong> <small>(Dorsoduro, tanio)</small>: Bacaro przy kanale naprzeciw warsztatu gondoli. Gorące crostini z lardo i smażone klopsiki, a do tego wino, wszystko za niewielkie pieniądze. <a href="https://www.mrandmrssmith.com/editorial/food-drink/venice-food-guide-best-bacari" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Smaki i trunki</h4>
+<ul>
+<li><strong>Ombra z baccalà mantecato</strong> <small>[ombra, bakala mantekato]</small> <small>(San Polo)</small>: „Ombra” to mały kieliszek wina, a baccalà mantecato to kremowa pasta z dorsza na grzance. Tak jada się w Wenecji po pracy. <a href="https://www.mrandmrssmith.com/editorial/food-drink/venice-food-guide-best-bacari" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Sarde in saor</strong> <small>[sarde in saor]</small>: Sardynki marynowane z cebulą w słodko-kwaśnej zalewie, wenecka klasyka z dawnych czasów rejsów. Zamów w bacaro, nie w restauracji z menu po polsku. <a href="https://tablejourney.com/italy/venice/street-food/all-arco/" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Miejscówki</h4>
+<ul>
+<li><strong>Cannaregio</strong> <small>(Cannaregio)</small>: Dzielnica, w której Wenecjanie jeszcze mieszkają: kanały bez tłumu, lokalne sklepy i osterie. Zejdź z głównej ulicy do stacji i błądź. <a href="https://luxurycolumnist.com/10-unmissable-venice-hidden-gems/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Cantine del Vino già Schiavi</strong> <small>(Dorsoduro)</small>: Stary bacaro nad kanałem koło Zattere, z dziesiątkami win na kieliszki i crostini z figami i pistacjami. Wieczorem pełno miejscowych. <a href="https://www.mrandmrssmith.com/editorial/food-drink/venice-food-guide-best-bacari" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Torcello</strong> <small>(Laguna)</small>: Cicha wyspa na lagunie z VII-wiecznymi kościołami i mozaikami. Po godzinie wiesz, czemu Wenecja kiedyś była stąd. <a href="https://luxurycolumnist.com/10-unmissable-venice-hidden-gems/" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Nietypowe</h4>
+<ul>
+<li><strong>Zalana krypta San Zaccaria</strong> <small>(Castello)</small>: Krypta z grobami dożów, w której stoi woda, więc sklepienia odbijają się jak w lustrze. Kilka kroków od placu św. Marka, a niemal nikt tu nie zagląda. <a href="https://luxurycolumnist.com/10-unmissable-venice-hidden-gems/" rel="nofollow noopener"><small>źródło</small></a></li>
+<li><strong>Ponte de Chiodo</strong> <small>(Cannaregio)</small>: Jeden z dwóch ostatnich mostów w Wenecji bez poręczy, ukryty w Cannaregio. Zrób zdjęcie bez tłumu i uważaj na krok. <a href="https://luxurycolumnist.com/10-unmissable-venice-hidden-gems/" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h4>Patent</h4>
+<ul>
+<li><strong>Cicchetti przy ladzie</strong>: W bacaro stań przy ladzie i zamawiaj „ombra” plus cicchetti na sztuki. To tańsze i szybsze niż kolacja przy stoliku. <a href="https://www.mrandmrssmith.com/editorial/food-drink/venice-food-guide-best-bacari" rel="nofollow noopener"><small>źródło</small></a></li>
+</ul>
+<h3>Od podróżników</h3>
+<p>Nikt jeszcze nie dodał wskazówki z wyjazdu. Możesz być pierwszy.</p>
+<p><a class="przycisk" href="/?sciezka=%2Fkierunki%2Fwenecja%2Fwskazowka">Byłeś tam? Dodaj wskazówkę w appce</a></p>
+</section>
+<section id="co-zobaczyc">
+<h2>Zabytki i muzea</h2>
+<ul class="kolumny">
+<li><a href="https://www.wikidata.org/wiki/Q172988">Bazylika św. Marka w Wenecji</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q189883">Pałac Dożów</a> <small>Muzeum</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q217527">Plac św. Marka w Wenecji</a> <small>Zabytek</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q338330">Gallerie dell&#39;Accademia</a> <small>Muzeum</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q820872">Ca&#39; d&#39;Oro</a> <small>Muzeum</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q713558">Kościół San Giorgio Maggiore</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q155225">Bazylika Santi Giovanni e Paolo w Wenecji</a> <small>Świątynia</small></li>
+<li><a href="https://www.wikidata.org/wiki/Q756807">Ca&#39; Pesaro</a> <small>Muzeum</small></li>
+</ul>
 <p><a href="https://www.openstreetmap.org/?mlat=45.44&amp;mlon=12.316#map=11/45.44/12.316">Zobacz na mapie OpenStreetMap</a></p>
 </section>
-<section>
+<section id="formalnosci">
 <h2>Formalności z polskim paszportem</h2>
 <ul>
 <li><strong>Wystarczy dowód osobisty</strong>.  </li>
@@ -135,6 +220,7 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <section class="cta">
 <h2>Nie chcesz układać tego sam?</h2>
 <p>Wyślij gołębia. W 48 godzin dostajesz plan: loty, noclegi, trasę dzień po dniu i miejsca, do których warto zajrzeć. Prognozę na najbliższe dni i aktualne ceny sprawdzisz w aplikacji za darmo.</p>
+<blockquote class="opinia"><p>Zależało mi na rodzinnych, tanich wakacjach all inclusive z basenami. Dostałam propozycje kierunków i najlepsze propozycje hotelowe, wszystko ekspresowo.</p><small>Paula z Otwocka, wakacje z rodziną</small></blockquote>
 <p><a class="przycisk" href="/">Zamów plan podróży</a><a class="przycisk jasny" href="/?sciezka=%2Fkierunki%2Fwenecja">Otwórz w aplikacji</a></p>
 </section>
 <h2>Źródła i licencje</h2>
@@ -145,12 +231,13 @@ details{margin:8px 0}summary{cursor:pointer;font-weight:600}
 <li>Ceny lotów: Duffel i Aviasales (Travelpayouts), pomiary z wyszukiwań w aplikacji Gołębie Latają.</li>
 <li>Wjazd: stan na 25.09.2026. Rozstrzyga serwis MSZ.</li>
 </ul>
+<p class="drobne autorzy">Przygotowali: <a href="/o-nas/">Michał i Paulina</a>, Gołębie Latają.</p>
 </main>
 <footer>
 <p class="drobne">Gołębie Latają układają plany podróży. Ty mówisz, czego chcesz, my szukamy, liczymy i piszemy. Plan w 48 godzin.</p>
 <p class="drobne">Kiedy wolne: <a href="/majowka/">Majówka</a> · <a href="/boze-cialo/">Boże Ciało</a> · <a href="/ferie-zimowe/">Ferie zimowe</a> · <a href="/sylwester-za-granica/">Sylwester za granicą</a> · <a href="/swieta-w-cieple/">Święta w cieple</a> · <a href="/wakacje-z-dziecmi/">Wakacje z dziećmi</a></p>
 <p class="drobne"><a href="/poradniki/">Poradniki</a> · <a href="/porownanie/">Porównania</a> · <a href="/tanie-loty/">Tanie loty</a> · <a href="/polityka-prywatnosci.html">Polityka prywatności</a> · <a href="/regulamin.html">Regulamin</a> · <a href="#zgoda" data-cookies="1">Ustawienia cookies</a> · <a href="mailto:lecimy@golebielataja.pl">lecimy@golebielataja.pl</a></p>
-<p class="drobne">Dane odświeżamy co tydzień. Stan na 5 października 2026.</p>
+<p class="drobne">Dane odświeżamy co tydzień. Stan na 6 października 2026.</p>
 </footer>
 <div class="pasek"></div>
 </body>
