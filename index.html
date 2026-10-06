@@ -42,20 +42,82 @@
 </head>
 
   <body>
-<noscript>
-<main style="max-width:680px;margin:40px auto;padding:0 16px;font-family:system-ui,sans-serif;line-height:1.6">
-<h1>Gołębie Latają. Plan podróży gotowy w 48h</h1>
-<p>Opowiedz nam w dwie minuty, o czym marzysz, a my zamienimy to w gotowy plan podróży. Michał i Paulina, Warszawa.</p>
-<p>Aplikacja potrzebuje JavaScriptu. Bez niego zajrzyj do <a href="/kierunki/">przewodnika po 164 kierunkach</a>, sprawdź, <a href="/gdzie-leciec/">gdzie polecieć w danym miesiącu</a>, przejrzyj <a href="/dlugie-weekendy/">długie weekendy</a> i <a href="/kraje/">kraje</a>. Do tego <a href="/regulamin.html">regulamin</a> i <a href="/polityka-prywatnosci.html">polityka prywatności</a>. Kontakt: <a href="mailto:lecimy@golebielataja.pl">lecimy@golebielataja.pl</a>.</p>
-</main>
-</noscript>
-
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <!-- The root element for your Expo app. -->
-    <div id="root"></div>
-  <script src="/_expo/static/js/web/entry-7205c855ea67103f05ca1ab853292c75.js" defer></script>
+    <div id="root"><!-- N3 (plan naprawczy): treść strony głównej w HTML. wstaw-glowna.mjs wkłada ją do <div id="root">: robot i pierwszy
+     rzut oka widzą stronę, a appka po załadowaniu podmienia zawartość root. Teksty ze starej strony głównej. -->
+<div class="gl-start" style="height:100%;overflow:auto;background:#F6F0E2;color:#23262C;font:17px/1.6 'IBM Plex Sans',system-ui,sans-serif">
+<style>
+.gl-start a{color:#1E3A6D}.gl-start .w{max-width:860px;margin:0 auto;padding:12px 16px}
+.gl-start h1,.gl-start h2,.gl-start h3{font-family:Fraunces,Georgia,serif;color:#1E3A6D;line-height:1.2}
+.gl-start h1{font-size:2.3rem;margin:.3em 0}.gl-start h2{font-size:1.5rem;margin:.2em 0 .5em}
+.gl-start nav{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline}.gl-start nav a{text-decoration:none;font-weight:600;font-size:.95rem}
+.gl-start nav .logo{font-family:Fraunces,Georgia,serif;font-size:1.25rem;color:#C8371F;margin-right:auto}
+.gl-start section{background:#FDFBF5;border-radius:12px;padding:16px 20px;margin:16px 0}
+.gl-start .cta{display:inline-block;background:#C8371F;color:#FDFBF5;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;margin:4px 8px 4px 0}
+.gl-start .pakiety{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.gl-start .pakiety div{background:#F6F0E2;border-radius:8px;padding:12px}
+.gl-start .cena{font-size:1.5rem;font-weight:600;color:#1E3A6D}.gl-start blockquote{margin:12px 0;border-left:4px solid #C8371F;padding:4px 0 4px 12px}
+.gl-start ul.siatka{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;list-style:none;padding:0}
+.gl-start ul.siatka a{display:block;background:#F6F0E2;border-radius:8px;padding:8px 10px;text-decoration:none}.gl-start small{color:#5a5d63}
+</style>
+<div class="w">
+<nav aria-label="Menu"><a class="logo" href="/">Gołębie Latają</a><a href="/kierunki/">Kierunki</a><a href="/gdzie-leciec/">Gdzie lecieć</a><a href="/tanie-loty/">Tanie loty</a><a href="/dlugie-weekendy/">Długie weekendy</a><a href="/poradniki/">Poradniki</a><a href="/o-nas/">O nas</a></nav>
+<main>
+<h1>Gołębie Latają. Plan podróży gotowy w 48h</h1>
+<p>Do wyjazdu coraz bliżej, a w głowie sto otwartych kart i zero planu? Znamy to uczucie. Opowiedz nam w dwie minuty, o czym marzysz: przygoda, błogi relaks czy zwyczajnie udany urlop. My zamieniamy ten chaos w gotowy plan podróży.</p>
+<p><a class="cta" href="/?sciezka=%2Fnowy%2Fstart">Wyślij gołębia</a> <a href="/o-nas/">Kim jesteśmy</a></p>
+<section>
+<h2>Jak to działa: Gołębia Metoda</h2>
+<ol>
+<li>Odczyt zlecenia. Czytamy Twój list zdanie po zdaniu, dopytujemy o braki.</li>
+<li>Zwiad. Sezon, pogoda, ceny, sytuacja na miejscu.</li>
+<li>Selekcja. Porównujemy hotele i restauracje, większość odpada.</li>
+<li>Trasa. Układamy dni tak, żeby się nie nachodzić.</li>
+<li>Pułapki i plan B. Spisujemy, co może pójść nie tak.</li>
+<li>Kontrola i stempel. Lista kontrolna, ceny z datą dnia, wysyłka.</li>
+</ol>
+<p>Pierwsze propozycje dostajesz w maksymalnie 48h od zamówienia. Jeśli nie trafimy, przygotujemy nowe w ramach tej samej opłaty albo oddamy pieniądze.</p>
+</section>
+<section>
+<h2>Pakiety</h2>
+<div class="pakiety">
+<div><h3>Podstawowy Lot</h3><p class="cena">399 zł</p><p>Propozycje lotów i wycieczek pod Twoje parametry, najważniejsze informacje o kraju i mieście, lista atrakcji na miejscu.</p></div>
+<div><h3>Kompletny Lot</h3><p class="cena">899 zł</p><p>Wszystko z Podstawowego, do tego loty i hotele pod budżet, plan dzień po dniu, restauracje, transport, formalności i słowniczek lokalnej kuchni.</p></div>
+<div><h3>Lot Premium</h3><p class="cena">1899 zł</p><p>Wszystko z Kompletnego, do tego interaktywna mapa, czat w trakcie wyjazdu, kolekcjonerskie wydanie planu i pocztówka ze stemplem.</p></div>
+</div>
+<p><a class="cta" href="/?sciezka=%2Fnowy%2Fstart">Zamów plan</a></p>
+</section>
+<section>
+<h2>Napisali do nas po lądowaniu</h2>
+<blockquote><p>Zaplanowali dla nas dwutygodniową podróż do Japonii, która była jednocześnie naszą podróżą poślubną. Rada dotycząca wysyłania bagaży z hotelu do hotelu: absolutny strzał w dziesiątkę!</p><small>Alicja i Łukasz, podróż poślubna w Japonii</small></blockquote>
+<blockquote><p>Potrzebowałem inspiracji na mototrip po Kaszubach i Pomorzu. Dostałem namiary, jakie punkty związane z II WŚ zwiedzić, gdzie rozbić namiot, gdzie zjeść i jakie jeziora zobaczyć.</p><small>Piotr, mototrip po Polsce</small></blockquote>
+<blockquote><p>Zależało mi na rodzinnych, tanich wakacjach all inclusive z basenami. Dostałam propozycje kierunków i najlepsze propozycje hotelowe, wszystko ekspresowo.</p><small>Paula z Otwocka, wakacje z rodziną</small></blockquote>
+<blockquote><p>Miałem biznesowy wyjazd do południowych Niemiec. Gołębie wskazali, jakie miasteczka po drodze zwiedzić oraz jak spędzić wolny weekend w tych okolicach.</p><small>Tomasz, Niemcy służbowo i po godzinach</small></blockquote>
+</section>
+<section>
+<h2>Przewodnik gołębi</h2>
+<p>Sam chcesz poszperać? Pogoda z 30 lat pomiarów, ceny lotów z polskich lotnisk i formalności dla 164 kierunków.</p>
+<ul class="siatka">
+<li><a href="/kierunki/"><strong>164 kierunki</strong><br><small>kiedy lecieć, pogoda, co zobaczyć</small></a></li>
+<li><a href="/gdzie-leciec/"><strong>Gdzie lecieć</strong><br><small>najlepsze kierunki w każdym miesiącu</small></a></li>
+<li><a href="/tanie-loty/"><strong>Tanie loty</strong><br><small>najtańsze trasy z 13 lotnisk</small></a></li>
+<li><a href="/dlugie-weekendy/"><strong>Długie weekendy</strong><br><small>ile urlopu, ile wolnego</small></a></li>
+<li><a href="/poradniki/"><strong>Poradniki</strong><br><small>eSIM, auto, pakowanie, loty do 4 h</small></a></li>
+<li><a href="/kraje/"><strong>Kraje</strong><br><small>wjazd, waluta, gniazdka</small></a></li>
+</ul>
+</section>
+<section>
+<h2>Nadawcy</h2>
+<p>Michał i Paulina z Warszawy. Razem sprawdziliśmy na własnej skórze 35 krajów, od Sahary w Tunezji po Malediwy i Gambię. <a href="/o-nas/">Więcej o nas</a>.</p>
+</section>
+</main>
+<footer><p><small>Kontakt: <a href="mailto:lecimy@golebielataja.pl">lecimy@golebielataja.pl</a> · <a href="/regulamin.html">Regulamin</a> · <a href="/polityka-prywatnosci.html">Polityka prywatności</a></small></p></footer>
+</div>
+</div>
+</div>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-1f8f5d3ca6b7f58204d51e14506d73fb.js" defer></script><script src="/_expo/static/js/web/__common-b436d6ce29c6c6d5e2169cbcb52fb3f6.js" defer></script><script src="/_expo/static/js/web/entry-14f90d5a1e36a01a61c748556781aa14.js" defer></script>
 </body>
 </html>
